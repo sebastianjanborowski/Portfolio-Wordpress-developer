@@ -1,0 +1,326 @@
+/* =================================================
+   THEME TOKENS (stałe kolory)
+   ================================================= */
+:root{
+  --advancedBlog-dark: #111;
+  --advancedBlog-light: #fff;
+  --blog-dark-header:#212529;
+  --white-bg:#fff;
+  --bgc-header:#23191d;
+}
+
+/* =================================================
+   OGÓLNE KLASY (Twoje – zostają)
+   ================================================= */
+.advancedBlog_switch_theme_dark_content{ color: var(--advancedBlog-dark) !important; }
+
+.advancedBlog_switch_theme_white_content,
+.advancedBlog_switch_theme_white_content span{
+  color: var(--advancedBlog-light) !important;
+}
+
+.advancedBlog_switch_theme_white_content_hamburger,
+.advancedBlog_switch_theme_white_content_hamburger span{
+  color: var(--advancedBlog-light) !important;
+}
+.advancedBlog_switch_theme_white_content_hamburger:hover{
+  color: var(--advancedBlog-dark) !important;
+}
+
+.advancedBlog_kolor_strony_dark{
+  background-color: var(--advancedBlog-dark) !important;
+}
+
+.advancedBlog_footer_color_and_bgc,
+.advancedBlog_footer_color_and_bgc a{
+  background-color: var(--advancedBlog-dark) !important;
+  color: var(--advancedBlog-light) !important;
+  border-radius: 10px;
+}
+
+.brand-logo{
+  background-color:var(--white-bg) !important;
+}
+/* =================================================
+   MENU – WAŻNE: styluj 1 poziom selektorem z ">"
+   (żeby nie psuć dropdownów)
+   ================================================= */
+.advancedBlog_menu > li{ /* jeśli masz jakieś style dla li, dawaj tutaj */ }
+
+.advancedBlog_menu > li > a{
+  /* przykład: jeśli gdzieś ustawiasz display/flex dla menu */
+  /* display: inline-flex; align-items:center; */
+  text-decoration: none;
+}
+
+.fashion-hero-wrap{
+  background-color: var(--advancedBlog-dark) !important;
+}
+
+.blog-dark-bgc{
+  background-color: var(--bgc-header) !important;
+}
+
+
+
+/* =================================================
+   RESET: dropdowny NIE dziedziczą układu menu głównego
+   (naprawia "li nie jest okej")
+   ================================================= */
+.advancedBlog_menu .dropdown-menu{
+  flex: none !important;
+}
+
+.advancedBlog_menu .dropdown-menu li{
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.advancedBlog_menu .dropdown-menu .dropdown-item{
+  display: block !important;
+  width: 100% !important;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* =================================================
+   DROPDOWN – KOLORY (kontekstowo, bez globalnej .dropdown-item)
+   ================================================= */
+
+/* 1) Dropdown na CIEMNYM tle (Twoja klasa na ul.dropdown-menu) */
+ul.dropdown-menu.advancedBlog_switch_theme_dark_bgc .dropdown-item{
+  color: var(--advancedBlog-light) !important;
+  background: transparent !important;
+}
+
+ul.dropdown-menu.advancedBlog_switch_theme_dark_bgc .dropdown-item:hover,
+ul.dropdown-menu.advancedBlog_switch_theme_dark_bgc .dropdown-item:focus{
+  background-color: var(--advancedBlog-light) !important;
+  color: var(--advancedBlog-dark) !important;
+}
+
+/* 2) Dropdown na JASNYM tle (gdy ul NIE ma dark_bgc) */
+ul.dropdown-menu:not(.advancedBlog_switch_theme_dark_bgc) .dropdown-item{
+  color: var(--advancedBlog-dark) !important;
+  background: transparent !important;
+}
+
+ul.dropdown-menu:not(.advancedBlog_switch_theme_dark_bgc) .dropdown-item:hover,
+ul.dropdown-menu:not(.advancedBlog_switch_theme_dark_bgc) .dropdown-item:focus{
+  background-color: var(--advancedBlog-dark) !important;
+  color: var(--advancedBlog-light) !important;
+}
+
+/* =================================================
+   SUBMENU (2/3 poziom) – jeśli masz kaskadowe menu
+   (opcjonalnie: szerokość, wyrównanie)
+   ================================================= */
+.dropdown-submenu > .dropdown-menu{
+  width: 220px;
+  min-width: 220px;
+}
+
+/* =================================================
+   MENU DROPDOWN (Twoje hamburgerowe) – jeśli chcesz flow zamiast absolute
+   ================================================= */
+
+#advancedBlog_menu_dropdown li.nav-item.dropdown > ul.dropdown-menu.show{
+  display: block !important;
+}
+
+
+/* =========================================================
+   SUBMENU (2 poziom): białe tło + czarny tekst
+   Działa dla: li.dropdown-submenu > ul.dropdown-menu
+   ========================================================= */
+
+/* tło i ramka 2 poziomu */
+.advancedBlog_menu .dropdown-menu li.dropdown-submenu > ul.dropdown-menu{
+  background: #fff !important;
+  background-color: #fff !important;
+  /* border: 1px solid rgba(0,0,0,.12) !important; */
+}
+
+/* linki w 2 poziomie */
+.advancedBlog_menu .dropdown-menu li.dropdown-submenu > ul.dropdown-menu .dropdown-item{
+  color: #111 !important;
+  background: transparent !important;
+}
+
+/* hover w 2 poziomie */
+.advancedBlog_menu .dropdown-menu li.dropdown-submenu > ul.dropdown-menu .dropdown-item:hover,
+.advancedBlog_menu .dropdown-menu li.dropdown-submenu > ul.dropdown-menu .dropdown-item:focus{
+  background: #111 !important;
+  color: #fff !important;
+}
+
+
+
+/* =================================================
+   1 POZIOM DROPDOWN: białe tło + czarny tekst
+   (tylko dropdown bezpośrednio pod nav-item.dropdown)
+   ================================================= */
+
+.advancedBlog_menu > li.nav-item.dropdown > ul.dropdown-menu{
+  background: #fff !important;
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,.12) !important;
+}
+
+.advancedBlog_menu > li.nav-item.dropdown > ul.dropdown-menu > li > a.dropdown-item,
+.advancedBlog_menu > li.nav-item.dropdown > ul.dropdown-menu > li > a.dropdown-toggle{
+  color: #111 !important;
+  background: transparent !important;
+}
+
+.advancedBlog_menu > li.nav-item.dropdown > ul.dropdown-menu > li > a:hover,
+.advancedBlog_menu > li.nav-item.dropdown > ul.dropdown-menu > li > a:focus{
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.advancedBlog_wcag_light_color{
+  color: white !important;
+}
+
+.advancedBlog_dark_bgc_light_content,.advancedBlog_wcag_light_color a{
+  background-color: #111 !important;
+  color: white !important;
+}
+
+
+
+/* podtsrony all dodanie ciemnego tła i białych napisów */
+
+.advancedBlog-main-placeText,.text-muted.small.mb-4{
+  background-color: #111 !important;
+  color: white !important;
+}
+
+a.btn.btn-outline-dark{
+  color: white !important;
+  border: solid 1px white;
+  background-color: #111;
+}
+
+/* ============== */
+
+/* podstrona kontakt dark theme */
+
+.advancedBlog-card,.advancedBlog-kontakt-opis,.advancedBlog-kontakt-opis h3{
+    background: #111 !important;
+    color: #fff !important;
+  }
+
+.advancedBlog-card,.advancedBlog-kontakt-opis{
+    border: solid 1px white !important;
+  }
+
+.advancedBlog-map{
+  filter: grayscale(100%) contrast(130%) brightness(90%);
+}
+
+/* ============================ */
+
+/* kwartalnik */
+.advancedBlog-kafelek{
+  border: solid 1px white;
+  background-color: transparent;
+}
+
+
+/* archive */
+.advancedBlog_archive h5 a,.advancedBlog_archive p,.advancedBlog_archive_title{
+  color: var(--advancedBlog-light);
+}
+
+/* category newsletter */
+.advancedBlog-post-thubnail-newsletter_category img{
+  background-color: var(--advancedBlog-light);
+  border-radius: 10px;
+}
+
+
+.advancedBlog-sigle-postthumbnail img,.advancedBlog-post-thubnail-newsletter img{
+  background-color: var(--advancedBlog-light);
+  border-radius: 10px;
+}
+
+/* ogłoszenia */
+.advancedBlog-ogloszenia-button:hover{
+  background-color: var(--brand-green) !important;
+  border: solid 1px var(--brand-green) !important;
+}
+
+.advancedBlog-ogloszenia{
+  color: white !important;
+}
+
+/* kontakt */
+.container h1.mb-4,.advancedBlog-auth-box h3,.advancedBlog-auth-box label,.advancedBlog-lostpass{
+  color: white !important;
+}
+
+.advancedBlog-auth-box{
+  border: solid 1px white !important;
+}
+
+/* konto */
+.advancedBlog-auth-box p,.advancedBlog-auth-actions a{
+  color: var(--advancedBlog-light) !important;
+}
+
+
+.fashion-contact-box{
+  background-color: var(--advancedBlog-light) !important;
+}
+.fashion-contact-box h3,.fashion-contact-box p{
+    color:var(--advancedBlog-dark);
+}
+
+.blog-konto-dark{
+  color: var(--advancedBlog-light) !important;
+}
+
+.advancedBlog-container-wcag{
+  color: white !important;
+  border: solid 1px white !important;
+}
+
+
+/* DARK MODE: jasny przycisk menu (hamburger) */
+body.advancedBlog_kolor_strony_dark #advancedBlog_main_menu_mobile_button.navbar-toggler{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+/* Ikona hamburgera (Bootstrap: .navbar-toggler-icon) */
+body.advancedBlog_kolor_strony_dark #advancedBlog_main_menu_mobile_button .navbar-toggler-icon{
+  /* Bootstrap robi ikonę przez background-image (svg). Nadpisujemy na ciemne kreski */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(15,23,42,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.4em;
+  height: 1.4em;
+}
+
+/* Hover/Active */
+body.advancedBlog_kolor_strony_dark #advancedBlog_main_menu_mobile_button.navbar-toggler:hover{
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+body.advancedBlog_kolor_strony_dark #advancedBlog_main_menu_mobile_button.navbar-toggler:active{
+  transform: translateY(0);
+}
+
+.advancedBlog-form-alert{
+  color: var(--advancedBlog-light) !important;
+}
+
+.advancedBlog-page-p p a{
+  color: white !important;
+}

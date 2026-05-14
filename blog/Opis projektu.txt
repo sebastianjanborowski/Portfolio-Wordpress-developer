@@ -1,0 +1,45 @@
+
+==================================================
+      WORDPRESS DEVELOPER – OPIS PROJEKTU
+==================================================
+
+Nowoczesny serwis blogowy wykonany w oparciu
+o WordPress, Bootstrap oraz autorski motyw
+Custom Theme.
+
+Projekt został przygotowany z naciskiem na:
+- responsywność
+- nowoczesny frontend
+- dostępność WCAG
+- wygodne zarządzanie treścią
+
+--------------------------------------------------
+FUNKCJONALNOŚCI
+--------------------------------------------------
+
+- Responsywny układ desktop / tablet / mobile
+- Frontendowe dodawanie wpisów
+- Moderacja wpisów przez administratora
+- Newsletter z zarządzaniem adresami
+- Filtrowanie wpisów i wyszukiwarka
+- Integracja Contact Form 7 oraz SMTP
+- Tryb jasny / ciemny WCAG
+
+--------------------------------------------------
+TECHNOLOGIE
+--------------------------------------------------
+
+WordPress, PHP, Bootstrap, JavaScript,
+WCAG, Contact Form 7, WP Mail SMTP
+
+--------------------------------------------------
+PODSUMOWANIE
+--------------------------------------------------
+
+Projekt przygotowany jako przykład realizacji
+komercyjnego serwisu WordPress do portfolio
+oraz CV WordPress Developera.
+
+==================================================
+Autor: Sebastian Jan Borowski
+==================================================

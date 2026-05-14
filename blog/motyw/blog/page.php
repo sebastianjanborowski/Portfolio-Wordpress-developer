@@ -1,0 +1,15 @@
+<?php get_header(); ?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <div class="container advancedBlog-main-placeText shadow advancedBlog-page">
+    <div class="col-lg-12">
+      <h2 class="text-center my-5"><?php the_title(); ?></h2>
+
+      <div class="page-content advancedBlog-page-p">
+        <?php the_content(); ?>
+      </div>
+    </div>
+  </div>
+<?php endwhile; endif; ?>
+
+<?php get_footer(); ?>

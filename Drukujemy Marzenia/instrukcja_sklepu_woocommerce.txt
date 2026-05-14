@@ -1,0 +1,248 @@
+==================================================
+     INSTRUKCJA OBSŁUGI SKLEPU WORDPRESS
+                / WOOCOMMERCE
+==================================================
+
+Autor projektu: Sebastian Jan Borowski
+
+--------------------------------------------------
+1. INFORMACJE OGÓLNE
+--------------------------------------------------
+
+Sklep internetowy został wykonany w oparciu
+o WordPress oraz WooCommerce.
+
+Projekt posiada nowoczesny i responsywny
+interfejs użytkownika z możliwością dynamicznego
+przełączania między:
+
+- trybem jasnym
+- trybem ciemnym
+
+W projekcie wdrożono również:
+
+- koszyk WooCommerce
+- system ulubionych produktów
+- rozbudowaną wyszukiwarkę produktów
+- zaawansowane filtrowanie produktów
+- dynamiczne karuzele produktów
+- moduł blogowy
+- system newslettera
+- mechanizm kopii zapasowej
+- opcjonalny system logowania 2FA
+
+--------------------------------------------------
+2. STRUKTURA SKLEPU
+--------------------------------------------------
+
+STRONA GŁÓWNA
+
+Strona główna pełni funkcję prezentacyjną
+oraz sprzedażową.
+
+Znajdują się na niej:
+
+- sekcje kategorii produktów
+- dynamiczne karuzele produktów
+- wyróżnione produkty
+- nowości
+- sekcje marketingowe i CTA
+
+Karuzele produktów działają w oparciu
+o JavaScript.
+
+--------------------------------------------------
+
+STRONA SKLEPU
+
+Dedykowana podstrona sklepu umożliwia:
+
+- przeglądanie produktów
+- wyszukiwanie produktów
+- filtrowanie produktów
+- sortowanie produktów
+- paginację
+- przegląd kategorii WooCommerce
+
+--------------------------------------------------
+3. FUNKCJE SKLEPU
+--------------------------------------------------
+
+TRYB JASNY / CIEMNY
+
+Sklep posiada wbudowany mechanizm zmiany
+motywu Light Mode / Dark Mode.
+
+Zmiana motywu odbywa się dynamicznie bez
+przeładowania strony.
+
+--------------------------------------------------
+
+ULUBIONE PRODUKTY
+
+Użytkownicy mogą dodawać produkty
+do listy ulubionych.
+
+Funkcjonalność umożliwia:
+
+- zapisywanie produktów
+- szybki powrót do wybranych pozycji
+- przegląd zapisanej listy
+
+--------------------------------------------------
+
+WYSZUKIWARKA PRODUKTÓW
+
+Wbudowana wyszukiwarka obsługuje:
+
+- nazwy produktów
+- kategorie
+- słowa kluczowe
+- częściowe dopasowania
+
+--------------------------------------------------
+
+ROZBUDOWANE FILTROWANIE
+
+System filtrowania umożliwia m.in.:
+
+- filtrowanie po kategorii
+- filtrowanie po cenie
+- filtrowanie po dostępności
+- sortowanie produktów
+
+--------------------------------------------------
+4. NEWSLETTER
+--------------------------------------------------
+
+Sklep posiada wbudowany system newslettera.
+
+Administrator może:
+
+- przeglądać zapisane adresy e-mail
+- eksportować dane do pliku CSV
+- zarządzać listą zapisów
+
+
+--------------------------------------------------
+5. MODUŁ BLOGOWY
+--------------------------------------------------
+
+Projekt posiada wbudowany moduł blogowy.
+
+Możliwe jest:
+
+- dodawanie wpisów
+- publikowanie aktualności
+- tworzenie poradników
+- prowadzenie działań SEO
+- rozwijanie content marketingu
+
+--------------------------------------------------
+6. KOPIA ZAPASOWA SERWISU
+--------------------------------------------------
+
+Projekt zawiera pełną kopię WordPressa
+obejmującą:
+
+- produkty
+- podstrony
+- media
+- ustawienia
+- konfigurację sklepu
+
+DO PRZYWRACANIA KOPII NALEŻY UŻYĆ:
+
+- All In One WP Migration
+- Unlimited Extension
+
+Rozszerzenie Unlimited znajduje się
+w plikach projektu i umożliwia import
+dużych kopii zapasowych.
+
+--------------------------------------------------
+7. SYSTEM LOGOWANIA 2FA
+--------------------------------------------------
+
+W projekcie znajduje się przygotowany
+mechanizm logowania 2FA do panelu
+administracyjnego.
+
+Mechanizm jest obecnie wyłączony
+(zakomentowany w kodzie).
+
+Powód:
+brak skonfigurowanego SMTP.
+
+Bez poprawnej konfiguracji SMTP:
+
+- wiadomości z kodem logowania
+  nie będą dochodziły
+- administrator nie będzie mógł
+  poprawnie się zalogować
+
+AKTYWACJA 2FA
+
+Po konfiguracji SMTP należy:
+
+1. otworzyć plik:
+   functions.php
+
+2. odkomentować linię:
+
+// require_once 'template/template-functions_2fa_kokpit.php';
+
+3. zmienić na:
+
+require_once 'template/template-functions_2fa_kokpit.php';
+
+4. zapisać plik
+
+Po wykonaniu tych kroków system 2FA
+zostanie aktywowany.
+
+--------------------------------------------------
+8. LOGOWANIE I ZAMÓWIENIA
+--------------------------------------------------
+
+Sklep obsługuje standardowe funkcje
+WooCommerce, w tym:
+
+- logowanie użytkowników
+- składanie zamówień
+- konta klientów
+- zarządzanie zamówieniami
+
+--------------------------------------------------
+9. TECHNOLOGIE
+--------------------------------------------------
+
+Projekt został wykonany z wykorzystaniem:
+
+- WordPress
+- WooCommerce
+- Bootstrap
+- JavaScript
+- PHP
+- CSS
+
+--------------------------------------------------
+10. DALSZA ROZBUDOWA
+--------------------------------------------------
+
+Projekt został przygotowany w sposób
+umożliwiający dalszy rozwój.
+
+Możliwa jest m.in.:
+
+- rozbudowa sklepu
+- dodawanie nowych sekcji
+- integracja płatności
+- integracja firm kurierskich
+- rozwój bloga
+- rozbudowa funkcji marketingowych
+- dalsze rozwijanie filtrów produktów
+
+==================================================
+              KONIEC INSTRUKCJI
+==================================================
