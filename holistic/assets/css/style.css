@@ -1,0 +1,3340 @@
+/* =========================================================
+    SEKCJA 1: ZMIENNE / GLOBAL
+========================================================= */
+
+:root{
+  --brand-green:#1f5a3a;
+  --brand_green_opacity: rgba(31, 90, 58, 0.4);
+  --brand-green-2:#14412a;
+  --bg-soft:#f3f4f6;
+  --colorWhite:#ffffff;
+  --card-radius: 20px;
+  --shadow-soft: 0 14px 40px rgba(0,0,0,.10);
+  --shadow-soft-2: 0 10px 26px rgba(0,0,0,.10);
+  --bg_dropdown_menu: #E6E6E6;
+  --bg_dropdown_menu_opacity:rgba(230, 230, 230, 0.9);
+  --kolor-tla-przycisk-zloty:#ccaf4f;
+
+  --hb-green-1:#061A10;   /* najciemniejszy */
+  --hb-green-2:#0B2A1A;   /* baza */
+  --hb-green-3:#0F3B25;   /* jaśniejszy */
+  --hb-gold:#D4AF37;      /* złoto logo */
+  --hb-gold-hover:#E1C15A;
+  --hb-white:#ffffff;
+
+
+   --beauty-bg: #f3efe9;
+  --beauty-paper: rgba(255,255,255,.65);
+  --beauty-border: rgba(60,40,20,.12);
+  --beauty-text: #3b2f26;
+  --beauty-muted: rgba(59,47,38,.72);
+  --beauty-gold: #b99a5a;
+  --beauty-gold-2: #a88644;
+  --beauty-radius: 14px;
+
+  --hb-green: #1f5a3a;
+  --hb-green-2: #17412e;
+  --hb-gold: #caa54a;
+  --hb-gold-soft: rgba(202,165,74,.16);
+  --hb-text: #2f2a26;
+  --hb-muted: #6e675f;
+  --hb-bg: #fbf8f3;
+  --hb-card: #ffffff;
+  --hb-line: rgba(202,165,74,.22);
+  --hb-shadow: 0 14px 34px rgba(23,65,46,.08);
+  --hb-radius-xl: 24px;
+  --hb-radius-lg: 18px;
+  --hb-radius-md: 14px;
+
+  /* tekstury */
+  --page-texture-1: url("http://holistic.local/wp-content/uploads/2026/02/tekstura-menu.png");
+  --page-texture-2: url("http://holistic.local/wp-content/uploads/2026/02/lisc_top-left.png");
+
+  /* kolor czcionki menu */
+  --color-menu-czcionka:#6E655C;
+
+  /* ciemna zielen dla przucisków */
+  --bgc-button:#205B4F;
+
+  --bgc-button_hover:#104A3E;
+
+
+   --hb-green-rgb: 31, 90, 58;
+  --hb-gold-rgb: 202, 165, 74;
+  --hb-dark-text: #1f332e;
+  --hb-content-text: #44524d;
+  --hb-comment-text: #5f6f69;
+  --hb-input-bg: #ffffff;
+  --hb-image-bg: #faf8f2;
+  --hb-success-bg: #d4edda;
+  --hb-warning-bg: #fff3cd;
+  --hb-error-bg: #f8d7da;
+
+}
+
+html, body{
+  background:
+    radial-gradient(120% 180% at 50% 20%, rgba(255,255,255,.90) 0%, rgba(245,241,235,.92) 40%, rgba(233,226,216,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.05) 100%);
+
+    color:#1b1f24;
+}
+
+.bydlo-main-placeText{
+    background-color: var(--colorWhite);
+    max-width: 1300px;
+    margin: 0px auto;
+    border-radius: 1dvh;
+}
+
+.bg-blobs{
+  position: relative;
+}
+
+.bg-blobs::after{
+  bottom:-260px; right:-260px;
+  background: radial-gradient(circle at 70% 70%, rgba(0,0,0,.06), rgba(0,0,0,0) 60%);
+}
+
+/* Żeby content był nad plamami  */
+.page-layer { position: relative; z-index: 1; }
+
+/* =========================================================
+SEKCJA 2: NAVBAR
+========================================================= */
+.navbar .dropdown-menu{
+  margin-top: .5rem;
+}
+.dropdown-menu{
+  width: 100%;
+  text-align: center;
+}
+
+#menu-rozwijane-menu{
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+#menu-rozwijane-menu > li a{
+  text-align: center;
+  width: 100%;
+  word-break: break-word; /* nowoczesne */
+  overflow-wrap: anywhere;
+}
+
+
+.bydlo_wcag_items{
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  transition: ease-in-out 0.2s;
+}
+
+.bydlo_wcag_items:hover{
+  background-color: var(--brand_green_opacity);
+}
+
+#bydlo_wcag_light{
+  top: 17px;
+  left: 58px;
+}
+
+#bydlo_wcag_dark{
+  top: 50px;
+  left: 73px;
+}
+
+#bydlo_wcag_aplus{
+  top: 77px;
+  left: 100px;
+}
+
+#bydlo_wcag_minus{
+  top: 93px;
+  left: 128px;
+}
+
+.bydlo_wcag_activator_img{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#bydlo_wcag_menu{
+  height: 130px;
+  width: 180px;
+  background-color: var(--bg_dropdown_menu);
+  padding: 10px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: absolute;
+  top: 80px;
+  right: 0%;
+  border-radius: 20px;
+}
+
+.bydlo_dropdown_button:hover{
+  background-color: var(--bg_dropdown_menu);
+}
+
+#bydlo_menu_dropdown{
+  height: auto;
+  position: absolute;
+  left: 52%;
+  transform: translateX(-50%);
+  width: 300px;
+  text-align: center;
+  background-color: var(--bg_dropdown_menu);
+  border-radius: 20px;
+  margin: 0px 0px 0px 0px;
+  padding: 10px;
+}
+
+.bydlo_nonVisibility{
+  display: none;
+}
+
+#menu-rozwijane-menu > li a{
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0px auto;
+  min-height: 30px;
+  border-radius: 20px;
+}
+
+#menu-rozwijane-menu > li a:hover{
+  background-color: var(--bg-soft);
+}
+
+#menu-menu-glowne{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* LI trzyma stałą wysokość */
+#menu-menu-glowne > li{
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+#menu-menu-glowne > li > a{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+#bydlo_dropdown_menu{
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+#bydlo_dropdown_menu i{
+  font-size: 25px;
+}
+
+.bydlo_menu li a{
+  color: var(--beauty-bg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.bydlo_menu li a:hover{
+  color: var(--kolor-tla-przycisk-zloty) !important;
+}
+.bydlo-index{
+  z-index: 12000;
+}
+header.topbar{
+  box-shadow:
+    0 -2px 4px rgba(0, 0, 0, 0.12),   /* delikatny cień u góry */
+    0 14px 28px rgba(0, 0, 0, 0.35);  /* mocniejszy na dole */
+  /* background: linear-gradient(90deg, var(--hb-green-1) 0%, var(--hb-green-2) 45%, var(--hb-green-3) 100%); */
+  background-color: var(--bgc-button);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 101, 92, 0.18);
+
+  top: 0px;
+  margin: 0px 0px 0% 0px;
+}
+
+.brand-wrap{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color: inherit;
+  min-height: 72px;
+}
+
+.brand-logo{
+  width: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex: 0 0 auto;
+  margin: 0px 10px 0px 0px;
+}
+
+.brand-logo img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  display:block;
+}
+
+.brand-title{ line-height: 1.05; }
+.brand-title .h5{
+  margin:0;
+  font-weight: 900;
+  color: var(--brand-green);
+  letter-spacing: .2px;
+}
+
+.brand-title .small{
+  display:block;
+  color:#2c2f33;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.nav-link{
+  font-weight: 800;
+  color:#1f2a21;
+}
+
+/* =====================holistic topbar na title============================== */
+
+
+/* === Page wrapper === */
+.beauty-page{
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+
+}
+
+/* === Hero (tło papierowe + liście) === */
+.beauty-page-hero{
+  position: relative;
+  overflow: hidden;
+  padding: 22px 0px 0px 0px;
+
+  /* papierowa belka */
+  background:
+    radial-gradient(120% 180% at 50% 20%, rgba(255,255,255,.90) 0%, rgba(245,241,235,.92) 40%, rgba(233,226,216,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.05) 100%);
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+
+/* delikatna tekstura papieru */
+.beauty-page-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: .22;
+  pointer-events:none;
+}
+
+
+/* === Title + ornament === */
+.beauty-page-hero__inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.beauty-page-title{
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: .01em;
+  color: rgba(55,55,55,.92);
+}
+
+.beauty-page-title img{
+  max-width: 30%;
+  margin: -3% 0px 0px 0px;
+}
+
+/* === Content box === */
+.beauty-page-content{
+  padding: 14px 0 30px;
+  background-color: #fff;
+  /* background:
+    radial-gradient(120% 180% at 50% 20%, rgba(255,255,255,.90) 0%, rgba(245,241,235,.92) 40%, rgba(233,226,216,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.05) 100%); */
+}
+
+.beauty-page-box{
+  background:
+    radial-gradient(120% 180% at 50% 20%, rgba(255,255,255,.90) 0%, rgba(245,241,235,.92) 40%, rgba(233,226,216,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.05) 100%);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  padding: clamp(18px, 2vw, 28px);
+}
+
+/* typografia treści */
+.beauty-page-box .page-content{
+  color: rgba(40,40,40,.88);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* obrazki w treści */
+.beauty-page-box .page-content img{
+  /* max-width: 45%; */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* mobile korekty liści */
+
+
+/*======================= koneic topbar holistic================================ */
+
+/*======================= holistic manu============================== */
+
+div.bydlo-menu-socialmedia a.holistic_menu_button_booksy{
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid #8D7752;
+  text-align: center;
+  font-size: 12px;
+  width: 200px;
+  /* złoto/beż jak na podglądzie */
+  background-color: var(--kolor-tla-przycisk-zloty);
+  box-shadow: 0 2px 0 rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.18);
+
+  color: var(--beauty-bg);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: .2px;
+
+  transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
+}
+
+div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
+  font-size: 20px;
+}
+
+
+.holistic-wrap-header-left{
+  position: absolute;          /* klucz */
+  left: 0px;
+  top: 0px;
+  pointer-events: none;
+  width: 45%;
+}
+
+.holistic-wrap-header-left img{
+  transform: scaleX(1);
+  max-width: 40%;
+  width: auto;
+  position: absolute;
+  left: 45%;
+  top: -20px;
+}
+
+.holistic-wrap-header-right{
+  position: absolute;          /* klucz */
+  right: 0px;
+  top: 0px;
+  pointer-events: none;
+  width: 45%;
+}
+
+.holistic-wrap-header-right img{
+  transform: scaleX(-1);
+  max-width: 40%;
+  width: auto;
+  position: absolute;
+  right: 45%;
+  top: -20px;
+}
+
+
+/* ===========================holistic koniec menu============================ */
+
+
+/* ==========================woocomerce moje konto=========================== */
+
+
+/* ====== HERO (belka tytułowa jak na wzorze) ====== */
+.beauty-account-hero{
+  margin-bottom: 0;
+}
+
+.beauty-page-hero{
+  position: relative;
+  overflow: hidden;
+  padding: 46px 0 36px;
+  background:
+    radial-gradient(120% 180% at 50% 20%, rgba(255,255,255,.90) 0%, rgba(245,241,235,.92) 40%, rgba(233,226,216,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,.05) 100%);
+  border-top: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+.beauty-page-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: .22;
+  pointer-events:none;
+}
+
+.beauty-page-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 220px auto, 240px auto;
+  background-position: left -30px top -30px, right -40px bottom -40px;
+  opacity: .9;
+  filter: saturate(.95) contrast(.95);
+}
+
+.beauty-page-hero__inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.beauty-page-title{
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: rgba(55,55,55,.92);
+}
+
+.beauty-page-ornament{
+  margin: 14px auto 0;
+  width: min(520px, 86%);
+  height: 18px;
+  position: relative;
+}
+.beauty-page-ornament::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top: 50%;
+  height: 1px;
+  background: rgba(170,140,90,.45);
+  transform: translateY(-50%);
+}
+.beauty-page-ornament::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top: 50%;
+  width: 70px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='36' viewBox='0 0 140 36'%3E%3Cpath d='M10 18c18 0 18-10 36-10s18 10 36 10 18-10 36-10 18 10 36 10' fill='none' stroke='%23aa8c5a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M70 10c0 8-8 8-8 12s8 4 8 4 8 0 8-4-8-4-8-12Z' fill='none' stroke='%23aa8c5a' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
+  opacity: .9;
+}
+
+/* ====== Sekcja "My Account" papierowa ====== */
+
+.beauty-paper{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  padding: clamp(16px, 2vw, 22px);
+  background:
+    radial-gradient(120% 160% at 50% 10%, rgba(255,255,255,.96) 0%, rgba(247,243,238,.96) 40%, rgba(236,228,218,.96) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,0));
+}
+
+.beauty-paper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity:.18;
+  pointer-events:none;
+}
+
+.beauty-paper > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* ====== Nawigacja po lewej ====== */
+.beauty-account-nav{
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.55);
+  padding: 14px;
+}
+
+.woocommerce-MyAccount-navigation ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce-MyAccount-navigation li{
+  margin: 0;
+}
+
+.woocommerce-MyAccount-navigation a{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: rgba(55,55,55,.85);
+  text-decoration:none;
+  border: 1px solid transparent;
+  transition: .12s ease;
+  font-size: .95rem;
+}
+
+.woocommerce-MyAccount-navigation a:hover{
+  background: rgba(184,156,99,.10);
+  border-color: rgba(184,156,99,.22);
+}
+
+.woocommerce-MyAccount-navigation .is-active a{
+  background: rgba(184,156,99,.14);
+  border-color: rgba(184,156,99,.28);
+  color: rgba(55,55,55,.95);
+}
+
+/* ====== Treść po prawej ====== */
+.beauty-account-content{
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.55);
+  padding: clamp(14px, 2vw, 18px);
+}
+
+.woocommerce-MyAccount-content h2,
+.woocommerce-MyAccount-content h3{
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  color: rgba(55,55,55,.92);
+}
+
+.woocommerce-MyAccount-content p,
+.woocommerce-MyAccount-content li{
+  color: rgba(55,55,55,.78);
+}
+
+/* ====== Tabele zamówień (jak na wzorze) ====== */
+.woocommerce table.shop_table{
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,.60);
+}
+
+.woocommerce table.shop_table thead th{
+  background: rgba(184,156,99,.10);
+  color: rgba(55,55,55,.85);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.woocommerce table.shop_table td,
+.woocommerce table.shop_table th{
+  padding: 12px 12px;
+}
+
+/* przyciski WooCommerce w kolorze złotym */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button{
+  background: #b89c63 !important;
+  color: #fff !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover{
+  background: #a98d57 !important;
+}
+
+/* Formularze w koncie */
+.woocommerce form .input-text,
+.woocommerce form input[type="text"],
+.woocommerce form input[type="email"],
+.woocommerce form input[type="password"],
+.woocommerce form textarea{
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.70);
+  padding: 10px 12px;
+}
+
+
+/* Ikony przed linkami menu My Account */
+.woocommerce-MyAccount-navigation a::before{
+  font-family: "bootstrap-icons";
+  display:inline-block;
+  width: 18px;
+  color: #b89c63;
+  opacity: .95;
+}
+
+/* Mapowanie ikon na endpointy */
+.woocommerce-MyAccount-navigation-link--dashboard a::before{ content:"\F4D7"; } /* bi-speedometer2 */
+.woocommerce-MyAccount-navigation-link--orders a::before{ content:"\F1B1"; }    /* bi-bag-check */
+.woocommerce-MyAccount-navigation-link--downloads a::before{ content:"\F2C4"; } /* bi-download */
+.woocommerce-MyAccount-navigation-link--edit-address a::before{ content:"\F3E7"; } /* bi-geo-alt */
+.woocommerce-MyAccount-navigation-link--edit-account a::before{ content:"\F4DA"; } /* bi-person */
+.woocommerce-MyAccount-navigation-link--customer-logout a::before{ content:"\F1C3"; } /* bi-box-arrow-right */
+
+
+/* =========================woocmememrce koniec============================= */
+
+
+/*======================= holistic podstrona kontakt======================== */
+
+.holistic-kontakt-informacje-kafelek{
+   box-shadow:
+    0 0 0 1px rgba(230,193,79,.12),
+    0 6px 10px rgba(0,0,0,.18),
+    0 0 22px rgba(0,0,0,.10);
+  border-radius: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.holistic-kontakt-informacje-kafelek ul{
+  display: flex;
+  flex-wrap: wrap;      /* przełamuje do kolejnego wiersza */
+  gap: 0px;            /* odstępy */
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.holistic-kontakt-informacje-kafelek ul li{
+  flex: 0 1 100%;
+}
+
+/* ====== Kontakt – papier + liście ====== */
+.beauty-contact{
+  background:#fff;
+}
+
+.beauty-contact-section{
+  background: #fff;
+}
+
+/* karta papierowa */
+.beauty-paper{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  padding: clamp(18px, 2vw, 28px);
+
+  background:
+    radial-gradient(120% 160% at 50% 10%, rgba(255,255,255,.96) 0%, rgba(247,243,238,.96) 40%, rgba(236,228,218,.96) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,0));
+}
+
+/* tekstura */
+.beauty-paper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity:.22;
+  pointer-events:none;
+}
+
+
+/* warstwa treści nad dekoracją */
+.beauty-paper > *{
+  position: relative;
+  z-index: 2;
+}
+
+.beauty-box-title{
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: rgba(55,55,55,.92);
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.beauty-subtitle{
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  color: rgba(55,55,55,.86);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.beauty-divider{
+  height: 1px;
+  background: rgba(170,140,90,.35);
+}
+
+/* prawa kolumna */
+/* .beauty-contact-list li{
+  margin-bottom: 14px;
+} */
+.beauty-ico{
+  color: #b89c63;
+  font-size: 1.05rem;
+  margin-top: .15rem;
+}
+.beauty-label{
+  font-size: .85rem;
+  color: rgba(60,60,60,.60);
+  margin-bottom: 2px;
+}
+.beauty-text{
+  color: rgba(40,40,40,.82);
+  line-height: 1.35;
+}
+.beauty-link{
+  color: rgba(40,40,40,.82);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.beauty-link:hover{
+  border-bottom-color: #b89c63;
+  color: rgba(40,40,40,.92);
+}
+
+/* godziny */
+.beauty-hours li{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(40,40,40,.78);
+  padding: 4px 0;
+}
+.beauty-hours li span:first-child{
+  color: rgba(40,40,40,.70);
+}
+
+/* social */
+.beauty-socialbtn{
+  width: 42px;
+  height: 42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 10px;
+  background: rgba(184,156,99,.12);
+  border: 1px solid rgba(184,156,99,.25);
+  color: #b89c63;
+  text-decoration:none;
+  transition: transform .12s ease, background .12s ease;
+}
+.beauty-socialbtn:hover{
+  transform: translateY(-2px);
+  background: rgba(184,156,99,.18);
+  color:#fff;
+}
+
+/* ====== CF7 – wygląd jak na mockupie ====== */
+.beauty-cf7 .wpcf7 form{
+  margin: 0;
+}
+
+.beauty-cf7 .wpcf7 label{
+  display:block;
+  font-size: .85rem;
+  color: rgba(60,60,60,.65);
+  margin-bottom: -10px;
+}
+
+.beauty-cf7 .wpcf7 input[type="text"],
+.beauty-cf7 .wpcf7 input[type="email"],
+.beauty-cf7 .wpcf7 textarea{
+  width:100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.72);
+  padding: 8px 12px;
+  outline: none;
+  box-shadow: none;
+}
+
+.beauty-cf7 .wpcf7 textarea{
+  resize: vertical;
+  height: 430px;
+}
+figcaption{
+  display: none !important;
+}
+
+.beauty-cf7 .wpcf7 input:focus,
+.beauty-cf7 .wpcf7 textarea:focus{
+  border-color: rgba(184,156,99,.55);
+  box-shadow: 0 0 0 .2rem rgba(184,156,99,.15);
+}
+
+.beauty-cf7 .wpcf7 .wpcf7-submit{
+  background: #b89c63;
+  color:#fff;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 10px;
+  padding: 10px 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.beauty-cf7 .wpcf7 .wpcf7-submit:hover{
+  background:#a98d57;
+}
+
+/* komunikaty CF7 */
+.beauty-cf7 .wpcf7-response-output{
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.75);
+  margin: 16px 0 0;
+  padding: 12px 14px;
+}
+
+/* ====== Mapa ====== */
+.beauty-map-wrap{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.55);
+}
+
+.beauty-map{
+  display:block;
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+
+
+.holistic-kontakt-main-img img{
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+
+/*=======================koniec podstrony kontakt=================================== */
+
+/* =========================holistic slider baner========================== */
+
+
+/* BIAŁY button (ramka + hamburger) */
+#bydlo_main_menu_mobile_button.navbar-toggler{
+  border: 1px solid rgba(255,255,255,.85) !important;
+  background: rgba(255,255,255,.08) !important; /* delikatny „glass” */
+  border-radius: 12px;
+  padding: .5rem .7rem;
+}
+
+/* Ikona hamburgera na biało (Bootstrap-style) */
+#bydlo_main_menu_mobile_button .navbar-toggler-icon{
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Hover */
+#bydlo_main_menu_mobile_button.navbar-toggler:hover{
+  background: rgba(255,255,255,.14) !important;
+}
+
+.holistic-slider-oferta{
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+/* Złote przyciski slidera */
+.carousel-control-prev-icon{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23E6C14F' viewBox='0 0 16 16'%3E%3Cpath d='M11 1L3 8l8 7' stroke='%23E6C14F' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+
+.carousel-control-next-icon{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23E6C14F' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23E6C14F' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+
+/* Delikatny efekt premium */
+.carousel-control-prev,
+.carousel-control-next{
+  opacity: .9;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(230,193,79,.6));
+}
+
+/* Sekcja */
+.beauty-hero{
+  overflow: hidden;
+}
+
+/* Slajd: tło foto + papierowa nakładka */
+.beauty-slide{
+  min-height: 420px;
+  height: 90vh;
+  position: relative;
+
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Papier/woalka */
+.beauty-slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(80% 100% at 15% 45%, rgba(255,255,255,.92) 0%, rgba(255,255,255,.75) 45%, rgba(255,255,255,.10) 75%, rgba(255,255,255,0) 100%),
+    linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.55) 38%, rgba(255,255,255,.05) 70%, rgba(255,255,255,0) 100%);
+  pointer-events:none;
+}
+
+/* Delikatna tekstura (opcjonalnie) */
+.beauty-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: .18;
+  pointer-events:none;
+}
+
+/* Liście: podmień URL na własne PNG/SVG z liśćmi */
+.beauty-slide .container::before,
+.beauty-slide .container::after{
+  content:"";
+  position:absolute;
+  width: 260px;
+  height: 260px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .85;
+  pointer-events:none;
+  filter: saturate(.95) contrast(.95);
+}
+
+
+/* Treść */
+.beauty-content{
+  position: relative;
+  z-index: 2;
+  padding: 1rem 0;
+  max-width: 520px;
+}
+
+.beauty-title{
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  letter-spacing: .01em;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1.08;
+  color: rgba(40,40,40,.92);
+  margin-bottom: .75rem;
+}
+
+.beauty-sub{
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  color: rgba(60,60,60,.72);
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+/* Button jak na wzorze */
+.beauty-btn{
+  background: #b89c63;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+.beauty-btn:hover{
+  background: #a98d57;
+  color:#fff;
+}
+
+/* Kontrolki – mniej nachalne */
+.beauty-control .carousel-control-prev-icon,
+.beauty-control .carousel-control-next-icon{
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
+  opacity: .85;
+}
+
+.beauty-indicators [data-bs-target]{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.65);
+  opacity: .65;
+}
+.beauty-indicators .active{
+  opacity: 1;
+}
+
+/* Mobile: tło bardziej centralne */
+
+
+/*========================== koniec baner slider========================== */
+
+/* ====================holistic footer====================== */
+
+/* newsletter footer */
+
+#holistic-messanger{
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+
+#holistic-button-to-top{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  padding: 11px;
+  border-radius: 10px;
+  background-color: var(--bgc-button);
+  text-align: center;
+  color: var(--hb-white);
+  transition: ease-in-out 0.1s;
+  font-size: 1.2rem;
+  rotate: -90deg;
+  z-index: 4000;
+}
+
+#holistic-button-to-top:hover{
+  background-color: #104A3E;
+}
+
+.holistic-footer-newsletter input[type="email"]{
+  color: var(--bgc-button);
+  background-color: var(--beauty-bg);
+  text-align: center;
+  border-radius: 10px;
+  border: solid 1px var(--bgc-button);
+  width: 80%;
+  padding: 10px 20px;
+  margin: 0px 0px 0px 0%;
+}
+
+.holistic-footer-newsletter button{
+ background-color:var(--bgc-button);
+ color: white;
+ border-radius: 10px;
+ width: 80%;
+ margin: 10px 0px 0px 0%;
+ border: none !important;
+}
+
+.holistic-footer-newsletter input[type="email"]::placeholder{
+  color: var(--hb-green-3) !important;
+  text-align: center;
+}
+
+/* ====================== */
+
+/* Kontener logo w stopce */
+.footer-brand-wrap{
+  width: 100%;
+  min-height: 100px;
+}
+
+/* Link nie rozpycha układu */
+.footer-brand-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background-color: white;
+   border-radius: 10px;
+}
+
+/* Najważniejsze: proporcje + limity */
+.footer-brand-img{
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 220px;     /* desktop limit */
+  max-height: 100px;     /* trzyma wysokość stopki */
+  object-fit: contain;  /* NIE ucina, trzyma proporcje */
+  border-radius: 10px;
+}
+
+/* Mobile: wycentruj i zmniejsz */
+
+
+.beauty-footer{
+  background-color: #fff;
+}
+
+.beauty-footer .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* Kolorystyka jak na wzorze */
+.beauty-footer{
+  --bf-gold: #c9b07a;
+  --bf-gold-2: #b89c63;
+  --bf-line: rgba(201,176,122,.35);
+  --bf-text: rgba(255,255,255,.85);
+  --bf-text-dim: rgba(255,255,255,.70);
+}
+
+.beauty-footer-title{
+  color: var(--bgc-button);
+  font-size: 1.35rem;
+  letter-spacing: .02em;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: .75rem;
+}
+
+.beauty-footer-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background: var(--bf-line);
+}
+
+.beauty-footer-col{
+  padding-right: 1rem;
+}
+
+
+.beauty-footer-list li,
+.beauty-footer-hours li{
+  margin-bottom: .85rem;
+}
+
+.beauty-footer-text{
+  color: var(--bgc-button);
+  line-height: 1.35;
+}
+
+.beauty-footer-ico{
+  color: var(--bgc-button);
+  font-size: 1.1rem;
+  margin-top: .15rem;
+}
+
+.beauty-footer-link{
+  color: var(--bgc-button);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.beauty-footer-link:hover{
+  color: var();
+  border-bottom-color: var(--bf-gold);
+}
+
+/* Menu footer (WP) */
+.beauty-footer-menu li{
+  margin-bottom: .7rem;
+  list-style: none;
+}
+.beauty-footer-menu a{
+  color: var(--bgc-button);
+  text-decoration: none;
+}
+.beauty-footer-menu a:hover{
+  color:var(--bgc-button_hover);
+  text-decoration: underline var(--beauty-gold) 1px;
+}
+.beauty-footer-bullet{
+  display:inline-block;
+  min-width: 1rem;
+  margin-right: .35rem;
+  color: var(--bgc-button);
+}
+
+/* Social */
+.beauty-footer-socialbtn{
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(201,176,122,.12);
+  /* border: 1px solid rgba(201,176,122,.25); */
+  color: var(--bgc-button);
+  text-decoration: none;
+  transition: transform .12s ease, background .12s ease;
+}
+.beauty-footer-socialbtn:hover{
+  transform: translateY(-2px);
+  background: var(--bgc-button_hover);
+  color: #fff;
+}
+
+/* Newsletter */
+.beauty-footer-news-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 1rem;
+}
+
+.beauty-footer-news-line{
+  flex: 1;
+  max-width: 220px;
+  height: 1px;
+  background: var(--bf-line);
+}
+
+.beauty-footer-news-text{
+  color: var(--bf-gold);
+  font-size: 1.8rem;
+  font-family: "Georgia", serif; /* zbliżone do wzoru */
+  letter-spacing: .02em;
+}
+
+.beauty-footer-input{
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+.beauty-footer-btn{
+  background: linear-gradient(180deg, var(--bf-gold), var(--bf-gold-2));
+  border: 1px solid rgba(0,0,0,.18);
+  color: rgba(255,255,255,.95);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.beauty-footer-btn:hover{
+  filter: brightness(1.05);
+  color:#fff;
+}
+
+/* Bottom */
+.beauty-footer-bottom{
+  color: var(--bgc-button);
+}
+
+
+.x{
+  /* background-color: red !important; */
+}
+
+
+/* ======================koniec============================ */
+
+
+/* ===========Licznik=========*/
+.holistic-stats-section{
+  padding: 64px 0 70px;
+}
+
+.holistic-stat-card{
+  text-align: center;
+  padding: 10px 12px;
+}
+
+.holistic-stat-number{
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1;
+  font-weight: 600;
+  color: #1f6b5a;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.holistic-stat-label{
+  font-size: 15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #7b7b7b;
+}
+
+
+/* ======================== */
+
+/* =================================
+    footer
+====================================
+*/
+
+.bydlo-footer{
+  background: transparent;
+  font-size: 16px;
+  color: #111;
+}
+
+.bydlo-footer__row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px !important;
+}
+
+.bydlo-footer__link{
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bydlo-footer__link:hover{
+  color: #1f5a3a;
+}
+
+.bydlo-footer__copy{
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.bydlo-footer__dev{
+  white-space: nowrap;
+}
+
+/* ========================================
+              Page.php
+==========================================*/
+.bydlo-page{
+  padding: 25px;
+  margin: 20px auto;
+}
+
+.bydlo_menu .dropdown-menu{
+  position: absolute !important;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: .5rem;
+  width: max-content;
+  width: 100% !important;
+  width: 200px !important;
+  z-index: 9999;
+  background-color: var(--bgc-button);
+}
+
+.beauty-product-card{
+  color: #111 !important;
+}
+
+
+.beauty-footer{
+  position: relative;
+  overflow: hidden;
+}
+
+/* wrapper ozdobnika */
+.holistic-ozdobnik-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.holistic-ozdobnik-wrap--top{
+  margin: 0 auto 0px auto;
+  rotate: 180deg;
+}
+
+.holistic-ozdobnik-wrap--bottom{
+  /* margin: -60px auto 0 auto; */
+  transform: scaleX(-1);
+  rotate: 180deg;
+}
+
+/* sama grafika */
+.holistic-ozdobnik-img{
+  max-width: 1200px;
+  /* margin: -300px; */
+  max-height: 800px;
+}
+
+/* jeśli dolny ma być odbiciem */
+.holistic-ozdobnik-img--bottom{
+  transform: scaleY(-1);
+}
+
+/* social media */
+.holistic-footer-icons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* mobile */
+
+
+/* na laptopach (mniejsza wysokość) lekko ciaśniej */
+
+
+/* ======================================= */
+
+.holistic-header-cart{
+  color: white;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+
+.holistic-header-cart{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(212,178,79,0.35);
+  color: #ffffff;
+  transition: all .25s ease;
+}
+
+.holistic-header-user-greeting{
+  display:block;
+  padding: 22px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 178, 79, 0.35);
+  align-items:center;
+  margin: 10px;
+  font-size:18px;
+  line-height:1.2;
+  color:#fff;
+  font-weight:500;
+  white-space:nowrap;
+  background-color: var(--bgc-button);
+  transition: ease-in-out 0.2s;
+  text-decoration: none;
+}
+
+.holistic-header-user-greeting a{
+  color:#f4ead7;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+
+.holistic-header-user-greeting:hover{
+  background-color: #d4b24f;
+}
+
+.holistic-header-user-name{
+  color:#fff;
+  font-weight:600;
+}
+
+.holistic-header-cart:hover{
+  background: #d4b24f;
+  color: #1f5a3a;
+  transform: translateY(-1px);
+}
+
+.holistic-header-cart i{
+  font-size: 22px;
+  line-height: 1;
+}
+
+.holistic-header-cart-count{
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f5a3a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(0,0,0,.18);
+}
+
+/* ====== ZMIENNE (łatwo podmienić) ====== */
+
+/* ====== HERO ====== */
+.beauty-page-hero{
+  padding: 54px 0 28px;
+  /* background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0)); */
+}
+.beauty-page-hero__inner{
+  text-align: center;
+}
+.beauty-page-title{
+  margin: 0;
+  font-size: clamp(32px, 4vw, 56px);
+  letter-spacing: .5px;
+  color: var(--beauty-text);
+}
+.beauty-page-ornament{
+  margin: 14px auto 0;
+  width: min(420px, 90%);
+  height: 18px;
+  opacity: .7;
+  border-top: 1px solid rgba(60,40,20,.18);
+  position: relative;
+}
+.beauty-page-ornament::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-9px;
+  transform: translateX(-50%);
+  width: 54px;
+  height: 18px;
+  border: 1px solid rgba(60,40,20,.18);
+  border-left: 0;
+  border-right: 0;
+  border-radius: 999px;
+  opacity: .6;
+}
+
+/* ====== SEKCJA / PAPIER ====== */
+.beauty-shop-grid ul{
+  margin: 20px 0px 0px 0px;
+}
+
+.beauty-shop-grid ul li{
+  /* margin: 0px 5px !important; */
+}
+
+.beauty-shop{
+  background: var(--beauty-bg);
+}
+.beauty-container-fluid{
+  max-width: 1320px;
+}
+.beauty-paper{
+  background: var(--beauty-paper);
+  border: 1px solid var(--beauty-border);
+  border-radius: var(--beauty-radius);
+  padding: 18px;
+  backdrop-filter: blur(4px);
+}
+
+/* ====== SIDEBAR ====== */
+.beauty-sidebar{
+  position: sticky;
+  z-index: 200;
+}
+.beauty-widget{
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--beauty-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+.beauty-widget-title{
+  font-weight: 600;
+  color: var(--beauty-text);
+  margin-bottom: 10px;
+}
+.beauty-cat-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.beauty-cat-list li{
+  margin: 0;
+}
+.beauty-cat-list a{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--beauty-text);
+  text-decoration: none;
+}
+.beauty-cat-list a:hover{
+  background: rgba(185,154,90,.14);
+}
+
+/* Woo widgety (podstawowe wygładzenie) */
+.woocommerce-widget-layered-nav-list,
+.woocommerce-widget-layered-nav-list__item{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.widget_price_filter .price_slider_wrapper{
+  margin-top: 10px;
+}
+
+/* ====== TOPBAR ====== */
+.beauty-shop-topbar{
+  padding: 12px 14px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--beauty-border);
+  border-radius: 12px;
+  margin: 0px 0px 0px 4%;
+  width: 95%;
+}
+.beauty-shop-count{
+  color: var(--beauty-muted);
+  font-size: 14px;
+}
+.beauty-shop-order select{
+  border-radius: 10px;
+  border: 1px solid var(--beauty-border);
+  padding: 10px 12px;
+  background: rgba(255,255,255,.75);
+}
+
+
+/* Bootstrap modal zawsze nad Twoim headerem/menu */
+.modal{
+  z-index: 2000001 !important;
+}
+.modal-backdrop{
+  z-index: 2000000 !important;
+}
+
+.modal-backdrop{
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.contained {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: var(--beauty-bg) !important;
+    background-color: var(--bgc-button) !important;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-weight: 700;
+}
+.wc-block-cart-item__total-price-and-sale-badge-wrapper{
+  flex-direction: row;
+}
+.holistic-zabiegi-button{
+   background:#1f5f52;
+  border:1px solid #1f5f52;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(31,95,82,.18);
+  transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease;
+  width: 40% !important;
+}
+
+.bydlo-single__content a{
+  display: block;
+  width: 200px;
+  border: solid 1px var(--hb-green);
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: var(--hb-green);
+  transition: ease-in-out 0.2s;
+  margin-left: auto;
+}
+
+.bydlo-postthumbnail-single-container-img{
+    width: 100%;
+    max-height: 650px !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 18px;
+}
+
+.holistic-button-single{
+  display: block;
+  width: auto;
+  height: 45px;
+  padding: 8px 15px;
+  border: solid 1px var(--hb-green);
+  text-decoration: none;
+  color: var(--hb-green);
+  border-radius: 5px;
+  transition: ease-in-out 0.2s;
+}
+.holistic-button-single:hover{
+  background-color: var(--hb-green);
+  color: white;
+}
+
+.bydlo-single__content a:hover{
+  background-color: var(--hb-green);
+  color: white;
+}
+
+.holistic-products-carousel{
+    width: 100%;
+    overflow: hidden;
+}
+
+.holistic-products-track{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    transition: transform .35s ease;
+}
+
+.holistic-products-carousel{
+    overflow: hidden;
+    width: 100%;
+}
+
+.holistic-products-track{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    position: relative;
+    transition: left .35s ease;
+    left: 0%;
+}
+
+.holistic-carousel-btn,
+.holistic-carousel-all{
+    border: none;
+    background: var(--hb-green);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.holistic-carousel-btn:hover,
+.holistic-carousel-all:hover{
+    background-color: var(--hb-green-2) !important;
+    color: #fff;
+}
+
+.holistic-button-product-nowosci{
+  background-color: var(--hb-green);
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.holistic-button-product-nowosci:hover{
+  background-color: var(--hb-green-3);
+  color: white !important;
+}
+
+.holistic-product-slide{
+    flex: 0 0 calc(25% - 18px);
+}
+
+.holistic-product-slide{
+    flex: 0 0 calc(25% - 18px);
+    max-width: calc(25% - 18px);
+}
+
+.holistic-book-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+    border-radius: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #1f5a3a 0%,
+        #17412e 100%
+    );
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .02em;
+
+    border: 1px solid rgba(202,165,74,.25);
+
+    box-shadow:
+        0 10px 24px rgba(23,65,46,.18),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background .22s ease;
+}
+
+.holistic-book-btn i{
+    font-size: 22px;
+    line-height: 1;
+    transition: transform .22s ease;
+}
+
+.holistic-book-btn:hover{
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #276b46 0%,
+        #1d5238 100%
+    );
+
+    box-shadow:
+        0 18px 34px rgba(23,65,46,.24),
+        inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.holistic-book-btn:hover i{
+    transform: translateX(4px);
+}
+
+.beauty-treatments{
+    background:
+        radial-gradient(circle at top left, rgba(212,184,93,.14), transparent 34%),
+        linear-gradient(180deg,#f8faf9 0%,#fff 100%);
+}
+
+.beauty-green{
+    color:#1f5f52!important;
+}
+
+.beauty-gold{
+    color:#d4b85d!important;
+    letter-spacing:.16em;
+}
+
+.beauty-line{
+    width:42px;
+    height:1px;
+    background:#d4b85d;
+    opacity:.75;
+}
+
+.treatment-card{
+    border:1px solid rgba(31,95,82,.08)!important;
+    box-shadow:0 14px 40px rgba(31,95,82,.08)!important;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+
+.treatment-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,184,93,.45)!important;
+    box-shadow:0 24px 70px rgba(31,95,82,.15)!important;
+}
+
+.holistic-zabiegi-button:hover{
+    background:var(--kolor-tla-przycisk-zloty,#d4b85d);
+    border-color:var(--kolor-tla-przycisk-zloty,#d4b85d);
+    color:var(--bg-soft,#1f332e)!important;
+    transform:translateY(-2px);
+}
+
+
+/* ============Sklep wygląd archive produktów ===================*/
+
+.beauty-product-card-item {
+  list-style: none;
+  margin: 0 0 28px 0;
+  padding: 0;
+  width: 33%;
+}
+
+.holistic-margin{
+  margin-top: -18px !important;
+  width: 102%;
+}
+
+.beauty-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 98%;
+  background: #ffffff;
+  border: 1px solid rgba(201, 170, 92, 0.22);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(23, 65, 46, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  padding: 0;
+}
+.onsale{
+  display: none;
+}
+
+.beauty-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px rgba(23, 65, 46, 0.14);
+  border-color: rgba(201, 170, 92, 0.45);
+}
+
+.beauty-product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  background: linear-gradient(135deg, #d9bb63 0%, #caa54a 100%);
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(202, 165, 74, 0.3);
+}
+
+.beauty-heart {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f5a3a;
+  font-size: 22px;
+  line-height: 42px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.beauty-heart:hover {
+  background: #1f5a3a;
+  color: #ffffff;
+}
+
+.beauty-product-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 275px;
+  padding: 28px 24px 20px;
+  background:
+    radial-gradient(circle at top, rgba(218, 191, 112, 0.08) 0%, rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, #fcfcfa 0%, #f7f4ee 100%);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.beauty-product-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 10px 15px;
+  background: #fff;
+}
+
+.beauty-product-title {
+  margin: 0 0 12px 0;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  color: #2f2a26;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.beauty-product-title a {
+  color: #2f2a26;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.beauty-product-title a:hover {
+  color: #1f5a3a;
+}
+
+.beauty-product-price {
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  color: #1f5a3a;
+}
+
+.beauty-product-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.beauty-product-actions a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--hb-green);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* =========================================== */
+
+/* =========================================================
+   FILTRY PRODUKTÓW — HOLISTIC BEAUTY
+   kompatybilne z blokami WooCommerce / WordPress
+========================================================= */
+
+/* GŁÓWNY SIDEBAR Z FILTRAMI */
+.wc-block-product-filters__overlay,
+.wc-block-product-filters__overlay-content,
+.wp-block-woocommerce-product-filter-price,
+.wp-block-woocommerce-product-filter-rating,
+.wp-block-woocommerce-product-filter-stock-status,
+.wp-block-woocommerce-product-filter-attribute,
+.wp-block-woocommerce-product-filter-active,
+.wp-block-woocommerce-product-filter-taxonomy {
+  box-sizing: border-box;
+}
+
+.wc-block-product-filters__overlay-content {
+  background: linear-gradient(180deg, #fffdfa 0%, #ffffff 100%);
+  border: 1px solid var(--hb-line);
+  border-radius: var(--hb-radius-xl);
+  padding: 22px 18px 20px;
+  box-shadow: var(--hb-shadow);
+  margin: -10px 0px 0px 0px;
+}
+
+/* NAGŁÓWEK */
+.wp-block-heading[style*="margin-top:0"] {
+  margin: 0 0 18px 0 !important;
+  padding-bottom: 14px;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--hb-text);
+  border-bottom: 1px solid rgba(202,165,74,.20);
+}
+
+/* KAŻDA SEKCJA FILTRA */
+.wc-block-product-filters__overlay-content > [data-block-name^="woocommerce/product-filter-"] {
+  margin: 0 0 20px 0;
+  padding: 0 0 18px 0;
+  border-bottom: 1px solid rgba(202,165,74,.16);
+}
+
+.wc-block-product-filters__overlay-content > [data-block-name^="woocommerce/product-filter-"]:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* TYTUŁY SEKcji */
+.wc-block-product-filters__overlay-content h3,
+.wc-block-product-filters__overlay-content legend,
+.wc-block-product-filters__overlay-content .wc-block-product-filter__title,
+.wc-block-product-filters__overlay-content .wc-block-components-filter-reset-button + div,
+.wc-block-product-filters__overlay-content .wp-block-woocommerce-product-filter-price > h3,
+.wc-block-product-filters__overlay-content .wp-block-woocommerce-product-filter-rating > h3,
+.wc-block-product-filters__overlay-content .wp-block-woocommerce-product-filter-stock-status > h3,
+.wc-block-product-filters__overlay-content .wp-block-woocommerce-product-filter-attribute > h3,
+.wc-block-product-filters__overlay-content .wp-block-woocommerce-product-filter-taxonomy > h3 {
+  margin: 0 0 12px 0 !important;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #1f1b18;
+}
+
+/* OGÓLNE LABEL */
+.wc-block-product-filters__overlay-content label,
+.wc-block-product-filters__overlay-content .wc-block-checkbox-list__label,
+.wc-block-product-filters__overlay-content .wc-block-components-checkbox__label {
+  color: var(--hb-text);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* LISTY CHECKBOXÓW */
+.wc-block-product-filters__overlay-content ul,
+.wc-block-product-filters__overlay-content .wc-block-checkbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wc-block-product-filters__overlay-content li,
+.wc-block-product-filters__overlay-content .wc-block-checkbox-list__item {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.wc-block-product-filters__overlay-content li:last-child,
+.wc-block-product-filters__overlay-content .wc-block-checkbox-list__item:last-child {
+  margin-bottom: 0;
+}
+
+/* WIERSZ OPCJI */
+.wc-block-components-checkbox,
+.wc-block-checkbox-list__item label,
+.wc-block-product-filters__overlay-content .wc-block-components-checkbox__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CUSTOM CHECKBOX / RADIO */
+.wc-block-components-checkbox .wc-block-components-checkbox__input,
+.wc-block-product-filters__overlay-content input[type="checkbox"],
+.wc-block-product-filters__overlay-content input[type="radio"] {
+  accent-color: var(--hb-green);
+}
+
+/* CENA — WRAPPER */
+.wp-block-woocommerce-product-filter-price {
+  padding: 0;
+}
+
+/* POLA MIN/MAX */
+.wc-block-price-filter__controls,
+.wc-block-components-price-slider__inputs,
+.wc-block-price-slider__range-input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wc-block-price-filter__amount,
+.wc-block-components-price-slider__amount,
+.wc-block-price-slider__amount,
+.wc-block-components-formatted-money-amount,
+.wc-block-product-filters__overlay-content input[type="number"] {
+  min-height: 42px;
+  border: 1px solid rgba(31,90,58,.18);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--hb-text);
+  padding: 10px 12px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.wc-block-product-filters__overlay-content input[type="number"]:focus {
+  outline: none;
+  border-color: var(--hb-gold);
+  box-shadow: 0 0 0 3px rgba(202,165,74,.14);
+}
+
+/* SUWAK CENY */
+.wc-block-components-price-slider,
+.wc-block-price-filter {
+  margin-top: 10px;
+}
+
+.wc-block-components-price-slider__range-input-progress,
+.wc-block-price-slider__range-input-progress {
+  background: var(--hb-green) !important;
+}
+
+.wc-block-components-price-slider__range-input,
+.wc-block-price-slider__range-input {
+  accent-color: var(--hb-green);
+}
+
+/* UCHWYTY SUWAKA - fallback na różne implementacje */
+.wc-block-components-price-slider .range-slider__thumb,
+.wc-block-price-filter .range-slider__thumb,
+.wc-block-components-price-slider input[type="range"]::-webkit-slider-thumb,
+.wc-block-price-filter input[type="range"]::-webkit-slider-thumb {
+  background: var(--hb-green);
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(23,65,46,.20);
+}
+
+/* ACTIVE FILTERS */
+.wp-block-woocommerce-product-filter-active {
+  background: rgba(31,90,58,.04);
+  border: 1px dashed rgba(31,90,58,.16);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.wp-block-woocommerce-product-filter-active .wc-block-active-filters,
+.wp-block-woocommerce-product-filter-active ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wp-block-woocommerce-product-filter-active li,
+.wp-block-woocommerce-product-filter-active .wc-block-active-filters__list-item {
+  margin: 0;
+}
+
+.wp-block-woocommerce-product-filter-active a,
+.wp-block-woocommerce-product-filter-active .wc-block-active-filters__list-item-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hb-green);
+  background: #fff;
+  border: 1px solid rgba(31,90,58,.14);
+}
+
+/* RATING */
+.wp-block-woocommerce-product-filter-rating .wc-block-rating-filter-list,
+.wp-block-woocommerce-product-filter-rating ul {
+  display: grid;
+  gap: 10px;
+}
+
+.wp-block-woocommerce-product-filter-rating .wc-block-components-product-rating,
+.wp-block-woocommerce-product-filter-rating .wc-block-rating-filter-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* LICZNIKI PRZY OPCJACH */
+.wc-block-product-filters__overlay-content .count,
+.wc-block-product-filters__overlay-content .wc-block-checkbox-list__count {
+  color: var(--hb-muted);
+  font-size: 13px;
+}
+
+/* PRZYCISKI / LINKI RESET */
+.wc-block-components-filter-reset-button,
+.wc-block-product-filters__overlay-content button,
+.wc-block-product-filters__overlay-content .button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(31,90,58,.14);
+  background: #fff;
+  color: var(--hb-green);
+  font-weight: 700;
+  transition: .22s ease;
+}
+
+.wc-block-components-filter-reset-button:hover,
+.wc-block-product-filters__overlay-content button:hover,
+.wc-block-product-filters__overlay-content .button:hover {
+  background: var(--hb-green);
+  color: #fff;
+  border-color: var(--hb-green);
+}
+
+/* LINKI W FILTRACH */
+.wc-block-product-filters__overlay-content a {
+  color: var(--hb-text);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.wc-block-product-filters__overlay-content a:hover {
+  color: var(--hb-green);
+}
+
+/* STAN FOCUS DLA DOSTĘPNOŚCI */
+.wc-block-product-filters__overlay-content a:focus,
+.wc-block-product-filters__overlay-content button:focus,
+.wc-block-product-filters__overlay-content input:focus,
+.wc-block-product-filters__overlay-content select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(202,165,74,.14);
+}
+
+/* DROBNA KOREKTA DLA SIDEBARU OBOK PRODUKTÓW */
+.shop-block-product-filters__overlay-content,
+.shop-block-product-filters__overlay {
+  width: 100%;
+}
+
+
+.holistic-shop-page{
+  background:
+    radial-gradient(circle at top left, rgba(212,184,93,.12), transparent 32%),
+    linear-gradient(180deg,#f8faf9 0%,#ffffff 100%);
+}
+
+.holistic-green{
+  color:#1f5f52;
+}
+
+.holistic-gold{
+  color:#d4b85d;
+  letter-spacing:.14em;
+}
+
+.holistic-shop-search-card,
+.holistic-filter-card,
+.holistic-toolbar-card{
+  border:1px solid rgba(31,95,82,.08)!important;
+}
+
+.holistic-shop-search-card{
+  background:
+    radial-gradient(circle at top right, rgba(212,184,93,.18), transparent 30%),
+    linear-gradient(135deg,#ffffff 0%,#f8faf9 100%);
+}
+
+.holistic-filter-card{
+  top:24px;
+  width: 105%;
+}
+
+.holistic-search-group .form-control{
+  border:1px solid rgba(31,95,82,.16);
+  color:#1f332e;
+  box-shadow:none;
+}
+
+.holistic-search-group .form-control:focus,
+.holistic-filter-card .form-control:focus,
+.holistic-filter-card .form-check-input:focus{
+  border-color:#d4b85d;
+  box-shadow:0 0 0 .25rem rgba(212,184,93,.18);
+}
+
+.holistic-main-btn{
+  background:#1f5f52;
+  border:1px solid #1f5f52;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(31,95,82,.16);
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+}
+
+.holistic-main-btn:hover{
+  background:#d4b85d;
+  border-color:#d4b85d;
+  color:#1f332e!important;
+  transform:translateY(-1px);
+}
+
+.holistic-soft-badge{
+  background:rgba(212,184,93,.18);
+  color:#1f5f52;
+}
+
+.holistic-filter-title{
+  color:#1f332e;
+}
+
+.holistic-filter-card .form-check-input{
+  border-color:rgba(31,95,82,.25);
+}
+
+.holistic-filter-card .form-check-input:checked{
+  background-color:#1f5f52;
+  border-color:#1f5f52;
+}
+
+.holistic-ordering select,
+.woocommerce-ordering select{
+  border:1px solid rgba(31,95,82,.16);
+  border-radius:999px;
+  padding:.65rem 2.5rem .65rem 1rem;
+  color:#1f332e;
+  background-color:#fff;
+}
+
+.holistic-pagination ul{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:.5rem;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+.holistic-pagination a,
+.holistic-pagination span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  height:42px;
+  padding:0 .85rem;
+  border-radius:999px;
+  background:#fff;
+  color:#1f5f52;
+  text-decoration:none;
+  border:1px solid rgba(31,95,82,.12);
+  font-weight:600;
+}
+
+.holistic-pagination .current{
+    background:#1f5f52;
+    color:#fff;
+    border-color:#1f5f52;
+}
+
+/* MOBILE */
+
+
+/* scroll dla filtrów produktów */
+.wc-block-product-filters__overlay-wrapper {
+  max-height: calc(100vh - 120px);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* jeśli scroll ma być na wewnętrznym kontenerze */
+.wc-block-product-filters__overlay-content {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 8px;
+}
+
+/* opcjonalnie ładniejszy scrollbar */
+.wc-block-product-filters__overlay-wrapper::-webkit-scrollbar,
+.wc-block-product-filters__overlay-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.wc-block-product-filters__overlay-wrapper::-webkit-scrollbar-track,
+.wc-block-product-filters__overlay-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wc-block-product-filters__overlay-wrapper::-webkit-scrollbar-thumb,
+.wc-block-product-filters__overlay-content::-webkit-scrollbar-thumb {
+  background: rgba(31, 90, 58, 0.35);
+  border-radius: 999px;
+}
+
+.wc-block-product-filters__overlay-wrapper::-webkit-scrollbar-thumb:hover,
+.wc-block-product-filters__overlay-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 90, 58, 0.55);
+}
+
+
+.wp-block-gallery.has-nested-images img{
+  margin: 0px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.wp-block-gallery.has-nested-images img:hover{
+  transform: scale(1.05);
+}
+
+
+.wp-block-gallery.has-nested-images{
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image{
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image img{
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 12px;
+    display: block;
+}
+
+.gallery-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(0,0,0,.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.gallery-modal.is-active{
+    display: flex;
+}
+
+.gallery-modal-inner{
+    /* max-width: 90vw;
+    max-height: 85vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-inner img{
+    max-width: 100%;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.gallery-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    color: red;
+    padding: 0px 0px 4px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 22px;
+}
+
+.gallery-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    border: 0;
+    border-radius: 50%;
+    background: #1f5d50;
+    color: #fff;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    line-height: 1;
+    padding: 0 0px 9px 0px;
+    z-index: 1000;
+}
+
+.gallery-prev{
+    left: 35px;
+}
+
+.gallery-next{
+    right: 35px;
+}
+
+.gallery-close:hover,
+.gallery-arrow:hover{
+    opacity: .85;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image.omnie img{
+  width: 500% !important;
+}
+
+.bydlo-single__content h3{
+  color: var(--hb-green) !important;
+}
+
+.bydlo_single_all h1{
+  color: var(--hb-green) !important;
+}
+
+/* =========================================================
+   FILTR PRODUKTÓW - WYŁĄCZENIE TRYBU OVERLAY NA MOBILE
+   filtr ma być zawsze widoczny, także poniżej 600px
+========================================================= */
+
+
+/* =========================================================
+   MOBILE - filtr zawsze widoczny, ale bez psucia klikania
+========================================================= */
+
+
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals{
+  width: 100% !important;
+}
+
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text{
+  width: 115px !important;
+}
+
+.navbar-nav .nav-link.show{
+  color: var(--beauty-gold) !important;
+}
+
+.dropdown-menu.show li{
+  transition: ease-in-out 0.2s;
+}
+
+.dropdown-menu.show li a:hover{
+  background-color: var(--bgc-button_hover) !important;
+}
+
+
+.wc-block-components-product-badge.wc-block-components-sale-badge{
+  display: none !important;
+}
+.wc-block-components-product-name{
+  color: var(--bgc-button);
+}
+
+.wc-block-cart-item__prices{
+  display: none !important;
+}
+.wc-block-components-checkout-place-order-button {
+  border: none !important;
+  background-color: var(--bgc-button) !important;
+  color: white !important;
+  border-radius: 5px !important;
+  padding: 15px 20px !important;
+  transition: ease-in-out 0.2s;
+}
+
+.wc-block-components-checkout-place-order-button:hover{
+  background-color: var(--bgc-button_hover) !important;
+}
+
+.woocommerce-breadcrumb a{
+  color: var(--bgc-button) !important;
+}
+#reviews{
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  justify-content:space-between !important;
+}
+
+.disnonImportant{
+  display: block !important;
+}
+
+#comments,#review_form_wrapper{
+  display: none;
+}
+
+#reviews > *:first-child{
+  width: 100%;
+}
+
+.beauty-paper a{
+  color: var(--hb-green) !important;
+}
+/* =========================================================
+   MEDIA QUERIES — ZEBRANE NA KOŃCU PLIKU
+========================================================= */
+
+@media (min-width: 992px){
+
+.beauty-footer-col-bordered{
+    /* border-left: 1px solid var(--bf-line); */
+    padding-left: 1.5rem;
+  }
+
+.navbar .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    background-color: var(--bgc-button_hover) !important;
+  }
+
+  .navbar .nav-item.dropdown:hover > .nav-link {
+    color: #d4b85d !important;
+  }
+
+  .navbar .dropdown-menu .dropdown-item,
+  .navbar .dropdown-menu .nav-link {
+    color: #d4b85d !important;
+    background-color: var(--bgc-button_hover) !important;
+  }
+
+  .navbar .dropdown-menu li {
+    background-color: var(--bgc-button_hover) !important;
+  }
+
+  .navbar .dropdown-menu .dropdown-item:hover,
+  .navbar .dropdown-menu .nav-link:hover {
+    color: #fff !important;
+    background-color: #1f5f52 !important;
+  }
+}
+
+@media (min-width: 601px){
+
+:where(.wc-block-product-filters) .wc-block-product-filters__overlay, :where(.wc-block-product-filters).is-overlay-opened .wc-block-product-filters__overlay{
+      position: absolute;
+    }
+}
+
+@media (max-width: 991.98px){
+
+.beauty-slide{
+    background-position: center;
+  }
+  .beauty-slide .container::before,
+  .beauty-slide .container::after{
+    width: 200px;
+    height: 200px;
+    opacity: .65;
+  }
+
+  .holistic-slider-oferta{
+    top: 60%;
+    left: 10px;
+    height: 300px;
+  }
+
+.footer-brand-wrap{
+    justify-content: center;
+  }
+  .footer-brand-img{
+    max-width: 180px;
+    max-height: 56px;
+  }
+
+.holistic-stats-section{
+    padding: 48px 0 54px;
+  }
+
+  .holistic-stat-label{
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+.holistic-header-cart{
+    position: relative;
+    left: 50%;
+    transform: translateX(-64%);
+  }
+  .holistic-footer-newsletter input[type="email"]{
+    margin: 0px 0px 0px 10%;
+  }
+  .holistic-ozdobnik-wrap--top{
+   margin: 0px 0px 50px 0px;
+  }
+
+  .holistic-ozdobnik-wrap--bottom{
+    margin-top: 50px;
+  }
+
+  .holistic-ozdobnik-img{
+    width: min(100%, 700px);
+  }
+
+.holistic-footer-newsletter button{
+    margin: 10px 0px 0px 10%;
+  }
+  .beauty-footer-title{
+    text-align: center;
+  }
+
+   .brand-wrap{
+    width: 60%;
+  }
+
+  /* KONTAKT – cała kolumna na środek */
+.beauty-footer-col .beauty-footer-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* środek w osi X */
+  text-align: center;
+  padding-left: 0 !important; /* usuń domyślne wcięcie UL */
+}
+
+/* każdy wiersz (li) też na środek */
+.beauty-footer-col .beauty-footer-list > li{
+  justify-content: center;    /* wyśrodkuj układ flex */
+  align-items: center !important;
+  width: 100%;
+}
+
+/* ikonka + tekst w jednej linii, bez „uciekania” */
+.beauty-footer-col .beauty-footer-list > li > span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+
+  .beauty-footer-menu li{
+    text-align: center;
+  }
+
+ /* WYŚRODKUJ BLOK "Social Media" (tytuł + ikony) */
+.beauty-footer-col .beauty-footer-title,
+.beauty-footer-col .beauty-footer-social{
+  text-align: center;
+}
+
+/* WYŚRODKUJ RZĄD IKON */
+.beauty-footer-social{
+  justify-content: center !important; /* dla d-flex */
+  width: 100%;
+}
+
+/* jeżeli ikony są w dodatkowym wrapperze */
+.holistic-footer-icons{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* FOOTER MENU – wyśrodkowanie listy */
+.beauty-footer-menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* środek */
+  text-align: center;
+  padding-left: 0 !important; /* usuń wcięcie UL */
+  margin-left: 0 !important;
+}
+
+/* każdy element menu */
+.beauty-footer-menu > li{
+  width: 100%;
+  text-align: center;
+}
+
+/* linki w menu */
+.beauty-footer-menu > li > a{
+  display: inline-block;      /* żeby text-align działał naturalnie */
+  text-align: center;
+}
+
+/* (opcjonalnie) wyłącz „strzałkę”/marker jeśli jest pseudo-elementem */
+.beauty-footer-menu > li::marker{
+  content: "";
+}
+
+.beauty-shop-grid {
+    display: block !important; /* jeśli ktoś popsuł row/flex */
+  }
+  .beauty-shop-grid > aside,
+  .beauty-shop-grid > div {
+    display: block !important;
+    width: 100% !important;
+  }
+
+.holistic-header-user-greeting{
+    width: auto;
+    max-width: 50%;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-56%);
+  }
+  .holistic-filter-card{
+      position:static!important;
+  }
+  .beauty-product-card-item{
+    width: 100% !important;
+  }
+  .wc-block-product-filters__overlay-content {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .wp-block-heading[style*="margin-top:0"] {
+    font-size: 20px;
+  }
+
+  .wc-block-product-filters__overlay-content h3,
+  .wc-block-product-filters__overlay-content legend,
+  .wc-block-product-filters__overlay-content .wc-block-product-filter__title {
+    font-size: 17px;
+  }
+}
+
+
+@media (max-width: 767.98px){
+
+.wc-block-product-filters__overlay-content {
+    padding: 16px 14px;
+  }
+
+  .wc-block-product-filters__overlay-content > [data-block-name^="woocommerce/product-filter-"] {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+
+  .wc-block-price-filter__controls,
+  .wc-block-components-price-slider__inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wc-block-price-filter__amount,
+  .wc-block-components-price-slider__amount,
+  .wc-block-price-slider__amount,
+  .wc-block-product-filters__overlay-content input[type="number"] {
+    width: 100%;
+  }
+}
+
+@media (max-width:767.98px){
+    .beauty-line{
+        width:24px;
+    }
+}
+
+@media (max-width: 600px){
+.holistic-book-btn{
+  width: 80%;
+  margin: 0px 10% 0px 0%;
+  text-align: center;
+}
+.holistic-button-single{
+  width: 80%;
+  margin: 0px 0px 0px 10%;
+  text-align: center;
+}
+
+.beauty-shop-grid ul{
+    margin: 20px 0px 0px 0px;
+  }
+
+  /* ukryj przycisk "otwórz filtry" */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__open-overlay,
+  .wp-block-woocommerce-product-filters button[data-wp-on--click*="openOverlay"] {
+    display: none !important;
+  }
+
+  /* pokaż overlay jak zwykły blok */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay,
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay[hidden] {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  /* wrapper ma się zachowywać jak zwykły kontener */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-wrapper {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* dialog też jako zwykły blok */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-dialog,
+  .wp-block-woocommerce-product-filters dialog.wc-block-product-filters__overlay-dialog {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* header overlay niepotrzebny */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-header,
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-close {
+    display: none !important;
+  }
+
+  /* właściwa zawartość filtra */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-content {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+/* ukryj tylko przycisk otwierania drawer */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__open-overlay,
+  .wp-block-woocommerce-product-filters button[data-wp-on--click*="openOverlay"] {
+    display: none !important;
+  }
+
+  /* pokaż główny kontener filtra jako zwykły blok */
+  .wp-block-woocommerce-product-filters {
+    display: block !important;
+  }
+
+  /* overlay jako normalny kontener w layoucie */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 1 !important;
+  }
+
+  /* wrapper */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-wrapper {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  /* dialog */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-dialog {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  /* ukryj tylko nagłówek drawer */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-header {
+    display: none !important;
+  }
+
+  /* zawartość */
+  .wp-block-woocommerce-product-filters .wc-block-product-filters__overlay-content {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* elementy formularza muszą być klikalne */
+  .wp-block-woocommerce-product-filters input,
+  .wp-block-woocommerce-product-filters button,
+  .wp-block-woocommerce-product-filters label,
+  .wp-block-woocommerce-product-filters a,
+  .wp-block-woocommerce-product-filters select {
+    pointer-events: auto !important;
+    touch-action: manipulation;
+  }
+  .wc-block-product-filters__overlay-footer{
+    display: none !important;
+  }
+}
+
+@media (max-width: 575px){
+
+   .beauty-page-hero{
+    padding: 34px 0 28px;
+  }
+  .beauty-page-hero::after{
+    background-size: 160px auto, 170px auto;
+    background-position: left -25px top -25px, right -30px bottom -30px;
+    opacity: .75;
+  }
+
+  .gallery-modal-inner{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-48%);
+  }
+
+.beauty-paper::after{
+    background-size: 160px auto, 170px auto;
+    background-position: left -25px bottom -25px, right -30px bottom -30px;
+    opacity: .70;
+  }
+  .beauty-map{
+    height: 260px;
+  }
+
+.products .row .g-4 .columns-4{
+    display: block !important;
+ }
+
+.holistic-stat-number{
+    font-size: 42px;
+  }
+
+  .holistic-stat-label{
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+.holistic-ozdobnik-img{
+    width: 100%;
+  }
+
+  .holistic-footer-icons{
+    justify-content: center;
+  }
+
+  .beauty-footer-title,
+  .beauty-footer-list,
+  .beauty-footer-menu,
+  .beauty-footer-social{
+    text-align: center;
+  }
+
+.beauty-page-box .wp-block-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .beauty-page-box .wp-block-gallery .wp-block-image {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .beauty-page-box .wp-block-gallery .wp-block-image img {
+        width: 100% !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 14px;
+        display: block;
+    }
+    .gallery-modal{
+        padding: 16px;
+        align-items: center;
+    }
+
+    .gallery-modal-inner{
+        max-width: 100%;
+        max-height: 78vh;
+    }
+
+    .gallery-modal-inner img{
+        max-height: 72vh;
+    }
+
+    .gallery-close,
+    .gallery-arrow{
+        top: auto;
+        bottom: 18px;
+        transform: none;
+        height: 46px;
+        border-radius: 14px;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery-prev{
+        left: 16px;
+        right: auto;
+        width: calc(33.333% - 22px);
+    }
+
+    .gallery-close{
+        left: 50%;
+        right: auto;
+        width: calc(33.333% - 22px);
+        transform: translateX(-50%);
+        background: #fff;
+        color: #c43232;
+        font-size: 24px;
+    }
+
+    .gallery-next{
+        right: 16px;
+        left: auto;
+        width: calc(33.333% - 22px);
+    }
+}
+
+
