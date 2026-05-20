@@ -54,36 +54,41 @@ Projekty, przy których brałem udział.
   Rozwój sklepu internetowego,
   modernizacja funkcjonalności
   oraz integracja API hurtowni Action
-  z wykorzystaniem automatyzacji n8n.
+  z wykorzystaniem automatyzacji n8n, realizowany podczas pracy w firmie Cemit.
 
 • komuwina.pl
   Modernizacja menu oraz optymalizacja SEO
   i wydajności serwisu
-  w Google PageSpeed Insights.
+  w Google PageSpeed Insights, realizowany podczas pracy w firmie Cemit.
 
 • domekelfow.pl
   Rozbudowa menu, usprawnienia SEO
-  oraz modernizacja formularzy kontaktowych.
+  oraz modernizacja formularzy kontaktowych, realizowany podczas pracy w firmie Cemit.
 
 • cemit.pl
   Całkowita przebudowa funkcjonalności serwisu
   przy zachowaniu dotychczasowego wyglądu strony
-  dzięki technikom optymalizacyjnym.
+  dzięki technikom optymalizacyjnym oraz dodawanie rozwiązzań automatyzacji do zamieszczania postów na blogu oraz facebook, realizowany podczas pracy w firmie Cemit.
 
 • wojcik.paris
   Naprawa i przywracanie serwisu internetowego
   z wykorzystaniem kopii baz danych
-  oraz odzyskiwania metadanych.
+  oraz odzyskiwania metadanych, realizowany podczas pracy w firmie Cemit.
 
 • bydlo.com.pl
   Rozbudowa oraz modernizacja
-  newsletterów i sekcji blogowych.
+  newsletterów i sekcji blogowych, realizowany podczas pracy w firmie Cemit.
 
 • stomatologiapanczyk.pl
   Implementacja automatyzacji publikacji treści
-  na Facebooku oraz WordPressie.
+  na Facebooku oraz WordPressie, realizowany podczas pracy w firmie Cemit.
 
 • otdent.pl
   Wdrożenie automatyzacji n8n
   do publikacji wpisów blogowych
-  i treści Facebook wspierających SEO.
+  i treści Facebook wspierających SEO, realizowany podczas pracy w firmie Cemit.
+
+• strefaseo.pl
+  Wdrożenie automatyzacji n8n
+  do publikacji wpisów blogowych
+  i treści Facebook wspierających SEO, realizowany podczas pracy w firmie Cemit.
