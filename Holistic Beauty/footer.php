@@ -81,7 +81,7 @@
             </a>
 
             <a title="Booksy" class="beauty-footer-socialbtn" href="https://holisticbeautylidiasyska.booksy.com/a/" aria-label="Booksy" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-calendar-check"></i>
+             <img src="<?php echo get_template_directory_uri() ?>/assets/img/produkcja/booksyicon_footer.png">
             </a>
 
             <a title="Instagram" class="beauty-footer-socialbtn" href="#" aria-label="Instagram">

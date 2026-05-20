@@ -81,7 +81,7 @@ $zabiegi_query = new WP_Query($args);
                                     </p>
 
                                     <div class="mt-auto">
-                                        <a href="<?php the_permalink(); ?>" class="btn rounded-pill fw-semibold holistic-zabiegi-button w-100">
+                                        <a href="<?php the_permalink(); ?>" class="btn fw-semibold holistic-zabiegi-button w-100">
                                             Zobacz szczegóły
                                         </a>
                                     </div>

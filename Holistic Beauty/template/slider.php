@@ -5,7 +5,7 @@
 
       <!-- SLIDE 1 -->
       <div class="carousel-item active">
-        <div class="beauty-slide" style="--bg:url('http://holistic.local/wp-content/uploads/2026/04/slider-1.png');">
+        <div class="beauty-slide" style="--bg:url('https://holistic-beauty.eu/wp-content/uploads/2026/04/slider-1.png');">
           <div class="container position-relative h-100">
             <div class="row h-100 align-items-center">
               <div class="col-12 col-lg-6 holistic-slider-oferta">
@@ -26,7 +26,7 @@
 
       <!-- SLIDE 2 -->
       <div class="carousel-item">
-        <div class="beauty-slide" style="--bg:url('http://holistic.local/wp-content/uploads/2026/04/slide-2.png');">
+        <div class="beauty-slide" style="--bg:url('https://holistic-beauty.eu/wp-content/uploads/2026/04/slide-2.png');">
           <div class="container position-relative h-100">
             <div class="row h-100 align-items-center">
               <div class="col-12 col-lg-6 holistic-slider-oferta">
@@ -47,7 +47,7 @@
 
       <!-- SLIDE 3 -->
       <div class="carousel-item">
-        <div class="beauty-slide" style="--bg:url('http://holistic.local/wp-content/uploads/2026/05/slider-3_kompresja-scaled.jpg');">
+        <div class="beauty-slide" style="--bg:url('https://holistic-beauty.eu/wp-content/uploads/2026/04/Dzial-o-mnie-Lidia-Syska-Holistic-Beauty-Kosmetologia-scaled.jpg');">
           <div class="container position-relative h-100">
             <div class="row h-100 align-items-center">
               <div class="col-12 col-lg-6 holistic-slider-oferta">

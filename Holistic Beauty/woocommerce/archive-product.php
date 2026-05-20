@@ -203,15 +203,8 @@ $pagination = paginate_links([
 <header class="beauty-page-hero">
     <div class="container">
         <div class="beauty-page-hero__inner text-center">
-            <h1 class="beauty-page-title">
-                <?php woocommerce_page_title(); ?>
-                <br>
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/produkcja/podkreslnik_title_cut.png'); ?>"
-                    alt=""
-                    class="img-fluid mt-2"
-                >
-            </h1>
+            <img class="holistic-header-ornament" src="<?php echo get_template_directory_uri(); ?>/assets/img/produkcja/podkreslnik_title_cut.png" alt="Podkreślnik tytułu podstrony">
+            <h1 class="beauty-page-title"><?php woocommerce_page_title(); ?></h1>
         </div>
     </div>
 </header>
@@ -249,7 +242,7 @@ $pagination = paginate_links([
                                         placeholder="Wpisz nazwę produktu, SKU, opis..."
                                     >
 
-                                    <button type="submit" class="btn rounded-end-pill px-4 px-lg-5 holistic-main-btn">
+                                    <button type="submit" class="btn px-4 px-lg-5 holistic-main-btn">
                                         Szukaj
                                     </button>
                                 </div>
@@ -362,11 +355,11 @@ $pagination = paginate_links([
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn w-100 rounded-pill fw-semibold py-2 holistic-main-btn">
+                            <button type="submit" class="btn w-100 fw-semibold py-2 holistic-main-btn">
                                 Zastosuj filtry
                             </button>
 
-                            <a href="<?php echo esc_url($shop_url); ?>" class="btn btn-outline-secondary w-100 rounded-pill fw-semibold py-2 mt-2">
+                            <a href="<?php echo esc_url($shop_url); ?>" class="btn btn-outline-secondary w-100 fw-semibold py-2 mt-2">
                                 Wyczyść wszystko
                             </a>
                         </form>
@@ -377,7 +370,7 @@ $pagination = paginate_links([
 
             <section class="col-12 col-lg-9">
 
-                <div class="card border-0 rounded-5 shadow-sm mb-4 holistic-toolbar-card">
+                <div class="card border-0 rounded-5 shadow-sm holistic-toolbar-card">
                     <div class="card-body p-3 p-md-4">
                         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
 

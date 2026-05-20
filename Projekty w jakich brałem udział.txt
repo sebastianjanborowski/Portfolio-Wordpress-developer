@@ -68,7 +68,7 @@ Projekty, przy których brałem udział.
 • cemit.pl
   Całkowita przebudowa funkcjonalności serwisu
   przy zachowaniu dotychczasowego wyglądu strony
-  dzięki technikom optymalizacyjnym oraz dodawanie rozwiązzań automatyzacji do zamieszczania postów na blogu oraz facebook, realizowany podczas pracy w firmie Cemit.
+  dzięki technikom optymalizacyjnym oraz dodawanie rozwiązań automatyzacji do zamieszczania postów na blogu oraz facebook, realizowany podczas pracy w firmie Cemit.
 
 • wojcik.paris
   Naprawa i przywracanie serwisu internetowego

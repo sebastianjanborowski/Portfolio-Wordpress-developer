@@ -6,6 +6,9 @@
 <?php get_template_part('template/karuzela_nowosci') ?>
 
 <?php get_template_part('template/mainContent') ?>
+
+<?php get_template_part('template/google_rewiews') ?>
+
 <?php get_template_part('template/licznik') ?>
 
 

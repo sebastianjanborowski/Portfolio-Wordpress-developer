@@ -80,6 +80,10 @@ html, body{
     color:#1b1f24;
 }
 
+a{
+  color: var(--hb-green);
+}
+
 .bydlo-main-placeText{
     background-color: var(--colorWhite);
     max-width: 1300px;
@@ -219,6 +223,7 @@ SEKCJA 2: NAVBAR
   display: flex;
   align-items: center;
   gap: 0;
+  justify-content: center;
 }
 
 /* LI trzyma stałą wysokość */
@@ -264,17 +269,7 @@ SEKCJA 2: NAVBAR
   z-index: 12000;
 }
 header.topbar{
-  box-shadow:
-    0 -2px 4px rgba(0, 0, 0, 0.12),   /* delikatny cień u góry */
-    0 14px 28px rgba(0, 0, 0, 0.35);  /* mocniejszy na dole */
-  /* background: linear-gradient(90deg, var(--hb-green-1) 0%, var(--hb-green-2) 45%, var(--hb-green-3) 100%); */
   background-color: var(--bgc-button);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(110, 101, 92, 0.18);
-
-  top: 0px;
-  margin: 0px 0px 0% 0px;
 }
 
 .brand-wrap{
@@ -324,13 +319,6 @@ header.topbar{
 
 /* =====================holistic topbar na title============================== */
 
-
-/* === Page wrapper === */
-.beauty-page{
-    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-
-}
-
 /* === Hero (tło papierowe + liście) === */
 .beauty-page-hero{
   position: relative;
@@ -374,8 +362,8 @@ header.topbar{
   color: rgba(55,55,55,.92);
 }
 
-.beauty-page-title img{
-  max-width: 30%;
+.holistic-header-ornament{
+  max-width: 55% !important;
   margin: -3% 0px 0px 0px;
 }
 
@@ -418,27 +406,8 @@ header.topbar{
 
 /*======================= holistic manu============================== */
 
-div.bydlo-menu-socialmedia a.holistic_menu_button_booksy{
-  padding: 8px 18px;
-  border-radius: 6px;
-  border: 1px solid #8D7752;
-  text-align: center;
-  font-size: 12px;
-  width: 200px;
-  /* złoto/beż jak na podglądzie */
-  background-color: var(--kolor-tla-przycisk-zloty);
-  box-shadow: 0 2px 0 rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.18);
-
-  color: var(--beauty-bg);
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: .2px;
-
-  transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
-}
-
-div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
-  font-size: 20px;
+.holistic-header-link-booksy img{
+  max-width: 120px;
 }
 
 
@@ -577,14 +546,14 @@ div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
     linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,0));
 }
 
-.beauty-paper::before{
+/* .beauty-paper::before{
   content:"";
   position:absolute;
   inset:0;
   background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
   opacity:.18;
   pointer-events:none;
-}
+} */
 
 .beauty-paper > *{
   position: relative;
@@ -594,8 +563,6 @@ div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
 /* ====== Nawigacja po lewej ====== */
 .beauty-account-nav{
   border-radius: 14px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
   padding: 14px;
 }
 
@@ -672,16 +639,28 @@ div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
   padding: 12px 12px;
 }
 
-/* przyciski WooCommerce w kolorze złotym */
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button{
-  background: #b89c63 !important;
+.woocommerce a.button{
+  background: var(--hb-green) !important;
   color: #fff !important;
   border: 1px solid rgba(0,0,0,.10) !important;
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  margin: 0px 0px 2px 0%;
 }
+
+/* przyciski WooCommerce w kolorze złotym */
+/* .woocommerce a.button, */
+.woocommerce button.button,
+.woocommerce input.button{
+  background: var(--hb-green) !important;
+  color: #fff !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  width: 90%;
+  margin: 0px 0px 0px 5%;
+}
+
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover{
@@ -893,7 +872,7 @@ div.bydlo-menu-socialmedia a.holistic_menu_button_booksy span{
 
 .beauty-cf7 .wpcf7 textarea{
   resize: vertical;
-  height: 430px;
+  height: 485px;
 }
 figcaption{
   display: none !important;
@@ -906,7 +885,7 @@ figcaption{
 }
 
 .beauty-cf7 .wpcf7 .wpcf7-submit{
-  background: #b89c63;
+  background: var(--hb-green);
   color:#fff;
   border: 1px solid rgba(0,0,0,.10);
   border-radius: 10px;
@@ -1088,8 +1067,8 @@ figcaption{
 
 /* Button jak na wzorze */
 .beauty-btn{
-  background: #b89c63;
-  color: #fff;
+  background: var(--hb-green);
+  color: #fff !important;
   border: 1px solid rgba(0,0,0,.08);
   border-radius: 10px;
   box-shadow: 0 10px 22px rgba(0,0,0,.10);
@@ -1129,9 +1108,10 @@ figcaption{
 #holistic-messanger{
   position: fixed;
   left: 30px;
-  bottom: 30px;
+  bottom: 25px;
   cursor: pointer;
   font-size: 2.5rem;
+  z-index: 3000;
 }
 
 
@@ -1315,9 +1295,16 @@ figcaption{
   transition: transform .12s ease, background .12s ease;
 }
 .beauty-footer-socialbtn:hover{
-  transform: translateY(-2px);
-  background: var(--bgc-button_hover);
-  color: #fff;
+  transform: scale(1.1);
+}
+
+.beauty-footer-socialbtn i{
+  font-size: 32px;
+}
+
+.beauty-footer-socialbtn img{
+  width: 40px;
+  height: 40px;
 }
 
 /* Newsletter */
@@ -1534,41 +1521,20 @@ figcaption{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 68px;
-  height: 68px;
-  border-radius: 10px;
   text-decoration: none;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(212,178,79,0.35);
   color: #ffffff;
-  transition: all .25s ease;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 .holistic-header-user-greeting{
-  display:block;
-  padding: 22px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(212, 178, 79, 0.35);
-  align-items:center;
-  margin: 10px;
-  font-size:18px;
-  line-height:1.2;
-  color:#fff;
-  font-weight:500;
-  white-space:nowrap;
-  background-color: var(--bgc-button);
-  transition: ease-in-out 0.2s;
-  text-decoration: none;
-}
-
-.holistic-header-user-greeting a{
-  color:#f4ead7;
-  text-decoration:none;
-  transition:color .2s ease;
-}
-
-.holistic-header-user-greeting:hover{
-  background-color: #d4b24f;
+ font-size: 30px;
+ display: flex !important;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ display: block;
+ padding: 10px;
 }
 
 .holistic-header-user-name{
@@ -1576,15 +1542,32 @@ figcaption{
   font-weight:600;
 }
 
-.holistic-header-cart:hover{
-  background: #d4b24f;
-  color: #1f5a3a;
-  transform: translateY(-1px);
+.holistic-header-cart i{
+  font-size: 30px;
+  line-height: 1;
 }
 
-.holistic-header-cart i{
-  font-size: 22px;
-  line-height: 1;
+.holistic-menu-mobile-booksy img{
+  max-width: 150px;
+}
+
+.holistic-menu-mobile-koszyk,.holistic-menu-mobile-konto{
+  font-size: 35px !important;
+  color: white;
+}
+
+.holistic-header-menu-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.holistic-socialmedia-header-mobile a{
+  text-align: center;
+  display: block;
+  display: inline-block;
 }
 
 .holistic-header-cart-count{
@@ -1767,8 +1750,7 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   flex-direction: row;
 }
 .holistic-zabiegi-button{
-   background:#1f5f52;
-  border:1px solid #1f5f52;
+  background:var(--hb-green);
   color:#fff!important;
   box-shadow:0 8px 20px rgba(31,95,82,.18);
   transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease;
@@ -1813,9 +1795,35 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   color: white;
 }
 
-.bydlo-single__content a:hover{
-  background-color: var(--hb-green);
-  color: white;
+.holistic-google-reviews-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.holistic-google-reviews-track {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+.holistic-google-review-slide {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+
+
+@media (max-width: 600px) {
+    .holistic-google-review-slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .holistic-mobile-zobacz-wszyskie{
+      display: none !important;
+    }
 }
 
 .holistic-products-carousel{
@@ -1823,13 +1831,6 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
     overflow: hidden;
 }
 
-.holistic-products-track{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
-    transition: transform .35s ease;
-}
-
 .holistic-products-carousel{
     overflow: hidden;
     width: 100%;
@@ -1838,7 +1839,7 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 .holistic-products-track{
     display: flex;
     flex-wrap: nowrap;
-    gap: 24px;
+    gap: 0px;
     position: relative;
     transition: left .35s ease;
     left: 0%;
@@ -1849,8 +1850,8 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
     border: none;
     background: var(--hb-green);
     color: #fff;
-    border-radius: 999px;
-    padding: 10px 16px;
+    border-radius: 5px;
+    padding: 13px 20px;
     text-decoration: none;
     font-weight: 600;
     line-height: 1;
@@ -1874,12 +1875,9 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 .holistic-product-slide{
-    flex: 0 0 calc(25% - 18px);
-}
-
-.holistic-product-slide{
-    flex: 0 0 calc(25% - 18px);
-    max-width: calc(25% - 18px);
+    flex: 0 0 calc(25% - 8px);
+    max-width: calc(25% - 8px);
+    margin: 0px 5px;
 }
 
 .holistic-book-btn{
@@ -1983,6 +1981,513 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
     transform:translateY(-2px);
 }
 
+/* ==================google rewierws================= */
+
+.holistic-google-reviews-title {
+    color: var(--hb-green);
+    font-size: 34px;
+}
+
+.holistic-google-reviews-score {
+    color: #1f5f43;
+    font-size: 26px;
+}
+
+.holistic-google-reviews-stars {
+    color: #f5b324;
+    font-size: 18px;
+}
+
+.holistic-review-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1f5f43;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.holistic-review-nav-btn:hover {
+    background: #174832;
+    color: #fff;
+}
+
+.holistic-google-reviews-track {
+    position: relative;
+    left: 0;
+    /* transition: left 0.35s ease; */
+}
+
+.holistic-google-review-card {
+    min-width: calc(33.333% - 16px);
+    background: #fff;
+}
+
+.holistic-review-avatar {
+    width: 48px;
+    height: 48px;
+    background: #1f5f43;
+    color: #fff;
+}
+
+.holistic-google-icon {
+    font-weight: 800;
+    font-size: 20px;
+    color: #4285f4;
+}
+
+.holistic-review-content {
+    color: #1f2933;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =================================================== */
+
+/* ==================single product==================== */
+
+.holistic-single-product{
+    background:
+        radial-gradient(circle at top left, rgba(212,184,93,.12), transparent 32%),
+        linear-gradient(180deg,#f8faf9 0%,#ffffff 100%);
+}
+
+.holistic-green{
+    color:#1f5f52;
+}
+
+.holistic-gold{
+    color:#d4b85d;
+    letter-spacing:.14em;
+}
+
+.holistic-product-gallery,
+.holistic-product-summary,
+.holistic-product-tabs{
+    border:1px solid rgba(31,95,82,.08)!important;
+}
+
+.holistic-product-gallery,
+.holistic-product-summary{
+    background:
+        radial-gradient(circle at top right, rgba(212,184,93,.13), transparent 34%),
+        #fff;
+}
+
+.holistic-main-image{
+    background:#faf8f2;
+    min-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.holistic-product-main-img{
+    max-height:520px;
+    object-fit:contain;
+}
+
+.holistic-thumb{
+    background:#faf8f2;
+    border:1px solid rgba(31,95,82,.08);
+    transition:transform .2s ease, border-color .2s ease;
+}
+
+.holistic-thumb:hover{
+    transform:translateY(-2px);
+    border-color:#d4b85d;
+}
+
+.holistic-single-price{
+    color:#1f5f52;
+    font-size:1.75rem;
+    font-weight:800;
+}
+
+.holistic-single-price del{
+    color:#8c8c8c;
+    font-size:1rem;
+    font-weight:500;
+    margin-right:.5rem;
+}
+
+.holistic-single-price ins{
+    text-decoration:none;
+}
+
+.holistic-soft-badge{
+    background:rgba(212,184,93,.18);
+    color:#1f5f52;
+    padding:.65rem .9rem;
+}
+
+.holistic-outline-badge{
+    color:#1f5f52;
+    border:1px solid rgba(31,95,82,.18);
+    background:#fff;
+    padding:.65rem .9rem;
+}
+
+.holistic-add-to-cart form.cart{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+}
+
+.holistic-add-to-cart .quantity .qty{
+    width:90px;
+    height:48px;
+    border-radius:999px;
+    border:1px solid rgba(31,95,82,.18);
+    padding:0 1rem;
+    text-align:center;
+}
+
+.holistic-add-to-cart .single_add_to_cart_button,
+.holistic-add-to-cart button[type="submit"]{
+    min-height:48px;
+    border-radius:999px!important;
+    background:#1f5f52!important;
+    border:1px solid #1f5f52!important;
+    color:#fff!important;
+    padding:.75rem 1.6rem!important;
+    font-weight:700!important;
+    box-shadow:0 8px 20px rgba(31,95,82,.16);
+    transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+}
+
+.holistic-add-to-cart .single_add_to_cart_button:hover,
+.holistic-add-to-cart button[type="submit"]:hover{
+    background:#d4b85d!important;
+    border-color:#d4b85d!important;
+    color:#1f332e!important;
+    transform:translateY(-1px);
+}
+
+.holistic-product-meta a{
+    color:#1f5f52;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.holistic-product-meta a:hover{
+    color:#d4b85d;
+}
+
+.holistic-product-tabs .nav-pills .nav-link{
+    color:#1f5f52;
+    background:#fff;
+    border:1px solid rgba(31,95,82,.12);
+    font-weight:700;
+    padding:.7rem 1.2rem;
+}
+
+.holistic-product-tabs .nav-pills .nav-link.active{
+    background:#1f5f52;
+    color:#fff;
+    border-color:#1f5f52;
+}
+
+.holistic-product-content{
+    color:#44524d;
+    line-height:1.8;
+}
+
+.holistic-outline-btn{
+    color:#1f5f52;
+    border:1px solid rgba(31,95,82,.2);
+    background:#fff;
+    font-weight:700;
+}
+
+.holistic-outline-btn:hover{
+    background:#1f5f52;
+    color:#fff;
+}
+
+.woocommerce-product-rating{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    margin-bottom:0!important;
+}
+
+.woocommerce-product-rating .star-rating{
+    color:#d4b85d;
+}
+
+.woocommerce-review-link{
+    color:#1f5f52;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.woocommerce-review-link:hover{
+    color:#d4b85d;
+}
+
+.woocommerce table.shop_attributes{
+    border:0;
+}
+
+.woocommerce table.shop_attributes th,
+.woocommerce table.shop_attributes td{
+    border-bottom:1px solid rgba(31,95,82,.08);
+    padding:14px;
+}
+
+/* OPINIE PRODUKTU */
+#reviews {
+  color: #1f332e;
+}
+
+#reviews #comments h2,
+#reviews #reply-title {
+  color: #1f5f52;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+#reviews .comment-reply-title {
+  display: block;
+  font-size: 24px;
+}
+
+#reviews .comment-form {
+  max-width: 500px;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8faf9 100%);
+  border: 1px solid rgba(31, 95, 82, .10);
+  box-shadow: 0 10px 28px rgba(31, 95, 82, .08);
+}
+
+#reviews .comment-form label {
+  display: block;
+  color: #1f5f52;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#reviews .comment-form textarea,
+#reviews .comment-form input[type="text"],
+#reviews .comment-form input[type="email"],
+#reviews .comment-form input[type="url"] {
+  width: 100%;
+  border: 1px solid rgba(31, 95, 82, .18);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: #1f332e;
+  background: #fff;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+#reviews .comment-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+#reviews .comment-form textarea:focus,
+#reviews .comment-form input:focus {
+  border-color: #d4b85d;
+  box-shadow: 0 0 0 .25rem rgba(212, 184, 93, .18);
+}
+
+#reviews .comment-form-rating {
+  margin-bottom: 18px;
+}
+
+#reviews .stars {
+  margin: 8px 0 0;
+}
+
+#reviews .stars a {
+  color: transparent !important;
+  position: relative;
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  margin-right: 4px;
+  text-decoration: none !important;
+}
+
+#reviews .stars a::before {
+  content: "★";
+  color: #d4b85d;
+  font-size: 30px;
+  line-height: 34px;
+  position: absolute;
+  inset: 0;
+}
+
+#reviews .form-submit {
+  margin-top: 18px;
+}
+
+#reviews .form-submit input[type="submit"],
+#reviews button[type="submit"] {
+  background: #1f5f52 !important;
+  border: 1px solid #1f5f52 !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: 8px 15px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 20px rgba(31, 95, 82, .16);
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+#reviews .form-submit input[type="submit"]:hover,
+#reviews button[type="submit"]:hover {
+  background: #d4b85d !important;
+  border-color: #d4b85d !important;
+  color: #1f332e !important;
+  transform: translateY(-1px);
+}
+
+#reviews .woocommerce-noreviews {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(212, 184, 93, .14);
+  color: #1f5f52;
+  font-weight: 600;
+}
+
+#reviews .commentlist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+#reviews .commentlist li {
+  padding: 18px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(31, 95, 82, .10);
+  margin-bottom: 14px;
+}
+
+#reviews .comment_container {
+  display: flex;
+  gap: 16px;
+}
+
+#reviews .avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+#reviews .comment-text {
+  flex: 1;
+}
+
+#reviews .meta {
+  color: #1f332e;
+  font-weight: 700;
+}
+
+#reviews .description {
+  color: #5f6f69;
+  line-height: 1.7;
+}
+
+.avatar.avatar-60.photo{
+  display:none !important;
+}
+
+@media (max-width: 575.98px) {
+  #reviews .comment-form {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  #reviews .comment_container {
+    flex-direction: column;
+  }
+
+  #reviews .stars a {
+    width: 30px;
+    height: 30px;
+  }
+
+  #reviews .stars a::before {
+    font-size: 26px;
+  }
+}
+
+@media (max-width:991.98px){
+  .wc-block-components-totals-wrapper{
+    padding: 16px 10px !important;
+  }
+  .bydlo-postthumbnail-single-container-img{
+    max-height: 300px !important;
+  }
+  .holistic-voucher-download-btn {
+    width: 100% !important;
+    margin: 5px 0px 5px 0px ;
+  }
+  .holistic-voucher-card-title {
+    font-size: 30px !important;
+  }
+  .holistic-voucher-info h3{
+    font-size: 28px !important;
+  }
+  .beauty-paper{
+    padding: 0px !important;
+  }
+  .beauty-page-box p{
+    padding: 20px;
+  }
+  .beauty-page-box{
+    padding: 0px;
+  }
+  .holistic-carousel-all{
+    padding: 10px 10px;
+  }
+  .holistic-header-cart-count{
+    top: 58% !important;
+    right: 50% !important;
+  }
+    .holistic-main-image{
+        min-height:320px;
+    }
+
+    .holistic-product-main-img{
+        max-height:360px;
+    }
+
+    .holistic-single-price{
+        font-size:1.45rem;
+    }
+    .woocommerce #reviews #comments ol.commentlist li .comment-text{
+      margin: 0px !important;
+    }
+}
+
+@media (max-width:575.98px){
+    .holistic-add-to-cart form.cart{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .holistic-add-to-cart .single_add_to_cart_button{
+        width:100%;
+    }
+
+    .bydlo_header_logo,
+    .custom-logo{
+        max-width:180px;
+        height:auto;
+    }
+}
+
+/* ===================================================== */
 
 /* ============Sklep wygląd archive produktów ===================*/
 
@@ -1992,10 +2497,17 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   padding: 0;
   width: 33%;
 }
+.woocommerce-page .woocommerce-info .button{
+  max-width: 25%;
+}
+
+.woocommerce table.shop_table td a{
+  width: auto;
+}
 
 .holistic-margin{
-  margin-top: -18px !important;
-  width: 102%;
+  margin-top: -5px !important;
+  width: 105%;
 }
 
 .beauty-product-card {
@@ -2021,6 +2533,7 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   box-shadow: 0 22px 44px rgba(23, 65, 46, 0.14);
   border-color: rgba(201, 170, 92, 0.45);
 }
+
 
 .beauty-product-badge {
   position: absolute;
@@ -2069,13 +2582,17 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 275px;
+  height: 332px;
   padding: 28px 24px 20px;
   background:
     radial-gradient(circle at top, rgba(218, 191, 112, 0.08) 0%, rgba(255, 255, 255, 0) 55%),
     linear-gradient(180deg, #fcfcfa 0%, #f7f4ee 100%);
   text-decoration: none;
   overflow: hidden;
+}
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit,:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button{
+  width: 100% !important;
+  margin: 0px !important;
 }
 
 .beauty-product-body {
@@ -2107,7 +2624,6 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 .beauty-product-price {
-  margin: 0 0 18px 0;
   font-size: 18px;
   line-height: 1;
   font-weight: 600;
@@ -2120,6 +2636,7 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  margin: 0px 0px 10px 0px;
 }
 .beauty-product-actions a{
   display: block;
@@ -2127,8 +2644,10 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   text-decoration: none;
   color: #fff;
   background-color: var(--hb-green);
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 0px 10px 8px 10px;
+  border-radius: 5px;
+  margin: -8px 0px 0px 5%;
+  width: 90%;
 }
 
 /* =========================================== */
@@ -2458,7 +2977,7 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 .holistic-main-btn{
-  background:#1f5f52;
+  background:var(--hb-green);
   border:1px solid #1f5f52;
   color:#fff!important;
   box-shadow:0 8px 20px rgba(31,95,82,.16);
@@ -2779,11 +3298,566 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 .beauty-paper a{
   color: var(--hb-green) !important;
 }
+
+/* podstrona pytania i odpowiedzi */
+
+.holistic-faq-section {
+    background: #faf8f4;
+}
+
+.holistic-faq-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 28px;
+    height: 100%;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.holistic-faq-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.holistic-faq-item {
+    border-bottom: 1px solid #ece7df;
+}
+
+.holistic-faq-item:last-child {
+    border-bottom: 0;
+}
+
+.holistic-faq-item summary {
+    cursor: pointer;
+    padding: 18px 38px 18px 0;
+    font-weight: 600;
+    line-height: 1.4;
+    position: relative;
+    list-style: none;
+}
+
+.holistic-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.holistic-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 16px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #f1eadf;
+    color: #6b4f2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 0px 0px 2px 1.5px;
+}
+
+.holistic-faq-item details[open] summary::after {
+    content: "−";
+}
+
+.holistic-faq-content {
+    padding: 0 0 18px;
+    color: #6c6c6c;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.holistic-faq-content p {
+    margin-bottom: 12px;
+}
+
+.holistic-faq-content p:last-child {
+    margin-bottom: 0;
+}
+
+.holistic-span-green{
+  color: var(--hb-green);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .holistic-header-link-booksy,.holistic-header-cart,.holistic-header-user-greeting{
+    display: none !important;
+  }
+
+    .holistic-faq-card {
+        padding: 22px;
+    }
+
+    .holistic-faq-title {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 575px) {
+    .holistic-faq-section {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .holistic-faq-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .holistic-faq-item summary {
+        font-size: 15px;
+        padding-right: 34px;
+    }
+
+    .holistic-faq-content {
+        font-size: 14px;
+    }
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+  width: 32%;
+  margin: 10px 0px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation{
+  width: 100%;
+}
+
+.holistic-white-toggler .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.holistic-white-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ====================voucher podarunkowy====================== */
+
+.holistic-voucher-page {
+    background: var(--hb-bg);
+    color: var(--hb-text);
+}
+
+.beauty-page-hero {
+    padding: 55px 0 35px;
+    background: var(--beauty-bg);
+    text-align: center;
+    border-bottom: 1px solid var(--hb-line);
+}
+
+.beauty-page-hero__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.holistic-header-ornament {
+    max-width: 540px;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+
+.holistic-voucher-slogan {
+    background: var(--beauty-bg);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.holistic-voucher-slogan h2 {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--hb-green);
+    font-size: clamp(25px, 3vw, 40px);
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.holistic-voucher-icons {
+    padding: 45px 0 20px;
+}
+
+.holistic-voucher-feature {
+    text-align: center;
+    padding: 22px;
+    height: 100%;
+    border-right: 1px solid var(--hb-line);
+}
+
+.holistic-voucher-feature:last-child {
+    border-right: 0;
+}
+
+.holistic-voucher-feature i {
+    font-size: 36px;
+    color: var(--hb-green);
+    margin-bottom: 14px;
+}
+
+.holistic-voucher-feature h3 {
+    font-size: 18px;
+    color: var(--hb-green);
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.holistic-voucher-feature p {
+    color: var(--hb-muted);
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.holistic-voucher-main {
+    padding: 35px 0;
+}
+
+.holistic-voucher-card {
+    background: var(--hb-card);
+    border: 1px solid var(--hb-line);
+    border-radius: var(--hb-radius-xl);
+    box-shadow: var(--hb-shadow);
+    padding: 35px;
+    height: 100%;
+}
+
+.holistic-voucher-card-title {
+    font-family: Georgia, serif;
+    color: var(--beauty-text);
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.holistic-voucher-card-subtitle {
+    text-align: center;
+    color: var(--hb-muted);
+    margin-bottom: 30px;
+}
+
+.holistic-voucher-form label {
+    font-weight: 700;
+    color: var(--hb-text);
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.holistic-voucher-form .form-control,
+.holistic-voucher-form .form-select {
+    border-radius: var(--hb-radius-md);
+    border: 1px solid var(--hb-line);
+    padding: 8px 10px;
+    background: var(--hb-input-bg);
+    color: var(--hb-text);
+}
+
+.holistic-voucher-form textarea.form-control {
+    min-height: 115px;
+}
+
+.holistic-voucher-form .form-control:focus,
+.holistic-voucher-form .form-select:focus {
+    border-color: var(--hb-green);
+    box-shadow: 0 0 0 0.2rem rgba(var(--hb-green-rgb), 0.12);
+}
+
+.holistic-voucher-switch,
+.holistic-voucher-delivery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.holistic-voucher-switch input,
+.holistic-voucher-delivery input,
+.holistic-voucher-amounts input {
+    display: none;
+}
+
+.holistic-voucher-switch label,
+.holistic-voucher-delivery label,
+.holistic-voucher-amounts label {
+    border: 1px solid var(--hb-line);
+    border-radius: var(--hb-radius-md);
+    padding: 8px 10px;
+    cursor: pointer;
+    background: var(--hb-card);
+    transition: 0.25s ease;
+}
+
+.holistic-voucher-switch label {
+    text-align: center;
+    color: var(--hb-green);
+}
+
+.holistic-voucher-switch input:checked + label,
+.holistic-voucher-amounts input:checked + label {
+    background: var(--bgc-button);
+    color: var(--hb-white);
+    border-color: var(--bgc-button);
+}
+
+.holistic-voucher-delivery input:checked + label {
+    border-color: var(--hb-green);
+    background: rgba(var(--hb-green-rgb), 0.07);
+}
+
+.holistic-voucher-amounts {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.holistic-voucher-amounts label {
+    text-align: center;
+    font-weight: 700;
+}
+
+.holistic-voucher-btn {
+    width: 100%;
+    max-width: 300px;
+    border: 0;
+    border-radius: var(--hb-radius-md);
+    background: var(--bgc-button);
+    color: var(--hb-white);
+    padding: 7px 15px;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+.holistic-voucher-download-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 7px 15px;
+    border-radius:14px;
+    background:var(--bgc-button);
+    color:var(--hb-white);
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s ease;
+}
+
+.holistic-voucher-download-btn:hover{
+    background:var(--bgc-button_hover);
+    color:var(--hb-white);
+    transform:translateY(-2px);
+}
+
+.holistic-voucher-info-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:rgba(var(--hb-green-rgb),0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.holistic-voucher-info-icon i{
+    font-size:26px;
+    color:var(--hb-green);
+}
+
+.holistic-voucher-btn:hover {
+    background: var(--bgc-button_hover);
+    transform: translateY(-2px);
+}
+
+.holistic-voucher-hidden {
+    display: none;
+}
+
+.holistic-voucher-info {
+    padding: 32px;
+    background: var(--hb-card);
+    border: 1px solid var(--hb-line);
+    border-top: 0;
+    border-radius: 0 0 var(--hb-radius-xl) var(--hb-radius-xl);
+    box-shadow: var(--hb-shadow);
+}
+
+.holistic-voucher-info h3 {
+    font-family: Georgia, serif;
+    color: var(--beauty-text);
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.holistic-voucher-info-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.holistic-voucher-info-item i {
+    color: var(--hb-green);
+    font-size: 28px;
+    flex: 0 0 34px;
+}
+
+.holistic-voucher-info-item h4 {
+    color: var(--hb-text);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.holistic-voucher-info-item p {
+    color: var(--hb-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.holistic-voucher-description {
+    margin-top: 35px;
+    background: var(--hb-card);
+    border: 1px solid var(--hb-line);
+    border-radius: var(--hb-radius-xl);
+    box-shadow: var(--hb-shadow);
+    padding: 35px;
+}
+
+.holistic-voucher-description h2 {
+    font-family: Georgia, serif;
+    color: var(--beauty-text);
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.holistic-voucher-description p {
+    color: var(--hb-muted);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.holistic-voucher-rules {
+    padding: 45px 0 0;
+}
+
+.holistic-voucher-rules-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: var(--beauty-text);
+    margin-bottom: 25px;
+}
+
+.holistic-voucher-accordion {
+    border: 1px solid var(--hb-line);
+    border-radius: var(--hb-radius-lg);
+    overflow: hidden;
+    background: var(--hb-card);
+}
+
+.holistic-voucher-accordion-item {
+    border-bottom: 1px solid var(--hb-line);
+}
+
+.holistic-voucher-accordion-item:last-child {
+    border-bottom: 0;
+}
+
+.holistic-voucher-accordion-button {
+    width: 100%;
+    border: 0;
+    background: var(--hb-card);
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--hb-text);
+    font-weight: 800;
+    text-align: left;
+}
+
+.holistic-voucher-accordion-content {
+    display: none;
+    padding: 0 22px 22px;
+    color: var(--hb-muted);
+    line-height: 1.7;
+}
+
+.holistic-voucher-accordion-item.active .holistic-voucher-accordion-content {
+    display: block;
+}
+
+.holistic-voucher-download {
+    background: var(--hb-card);
+    border: 1px solid var(--hb-line);
+    border-radius: var(--hb-radius-xl);
+    padding: 30px;
+    height: 100%;
+    box-shadow: var(--hb-shadow);
+    text-align: center;
+}
+
+.holistic-voucher-download i {
+    font-size: 54px;
+    color: var(--hb-green);
+    margin-bottom: 15px;
+}
+
+.holistic-voucher-download p {
+    color: var(--hb-muted);
+    line-height: 1.6;
+}
+
+.holistic-voucher-download a {
+    display: block;
+    background: var(--bgc-button);
+    color: var(--hb-white);
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: var(--hb-radius-md);
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.holistic-voucher-download a:hover {
+    background: var(--bgc-button_hover);
+}
+
+@media (max-width: 991px) {
+    .holistic-voucher-feature {
+        border-right: 0;
+        border-bottom: 1px solid var(--hb-line);
+    }
+
+    .holistic-voucher-switch,
+    .holistic-voucher-delivery {
+        grid-template-columns: 1fr;
+    }
+
+    .holistic-voucher-amounts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .holistic-voucher-card {
+        padding: 25px;
+    }
+}
+
+/* ============================================================= */
+
+/* =============================== */
 /* =========================================================
    MEDIA QUERIES — ZEBRANE NA KOŃCU PLIKU
 ========================================================= */
 
 @media (min-width: 992px){
+
+  .holistic-socialmedia-header-mobile{
+    display: none !important;
+  }
+
+  #mainNav {
+      display: flex !important;
+      width: 100%;
+  }
 
 .beauty-footer-col-bordered{
     /* border-left: 1px solid var(--bf-line); */
@@ -2825,6 +3899,65 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 @media (max-width: 991.98px){
+  .holistic-zabiegi-button{
+    width: 100% !important;
+  }
+  .woocommerce ul.order_details li{
+    width: 100% !important;
+    margin: 5px 0px 0px 0px !important;
+  }
+  .woocommerce #review_form #respond .form-submit input{
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+  }
+
+  .holistic-google-review-slide {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .holistic-header-ornament{
+      max-width: 80% !important;
+    }
+  .brand-logo{
+    width: 100%;
+    display: block;
+  }
+  .holistic-google-review-card {
+        min-width: calc(50% - 12px);
+    }
+
+    #mainNav {
+        display: none;
+        width: 100%;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      #mainNav.is-open {
+        display: block;
+      }
+
+      #mainNav .navbar-nav {
+        gap: 0 !important;
+      }
+
+      .brand-logo img {
+        max-height: 70px;
+        width: auto;
+        display: block;
+      }
+
+      .holistic-header-cart,
+      .bydlo-menu-socialmedia {
+        margin-top: 10px;
+      }
+
+
+.holistic-product-slide{
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    margin: 0px 5px;
+}
 
 .beauty-slide{
     background-position: center;
@@ -2860,9 +3993,9 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
   }
 
 .holistic-header-cart{
-    position: relative;
-    left: 50%;
-    transform: translateX(-64%);
+   position: relative;
+   left: 49%;
+   transform: translateX(-50%);
   }
   .holistic-footer-newsletter input[type="email"]{
     margin: 0px 0px 0px 10%;
@@ -2975,11 +4108,11 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 
 .holistic-header-user-greeting{
     width: auto;
-    max-width: 50%;
+    max-width: 200px;
     text-align: center;
     position: relative;
-    left: 50%;
-    transform: translateX(-56%);
+    left: 48%;
+    transform: translateX(-48%);
   }
   .holistic-filter-card{
       position:static!important;
@@ -3030,12 +4163,23 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 @media (max-width:767.98px){
-    .beauty-line{
-        width:24px;
-    }
+#reviews{
+  flex-direction: column !important;
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__total{
+  width: 80%;
+}
+.beauty-line{
+    width:24px;
+}
 }
 
 @media (max-width: 600px){
+.holistic-product-slide{
+    flex: 0 0 calc(100%);
+    max-width: calc(100%);
+    margin: 0px !important;
+}
 .holistic-book-btn{
   width: 80%;
   margin: 0px 10% 0px 0%;
@@ -3216,6 +4360,17 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
 }
 
 @media (max-width: 575px){
+  .holistic-header-cart{
+    left: 47%;
+  }
+
+  .holistic-google-review-card {
+        min-width: 100%;
+    }
+
+    .holistic-google-reviews-title {
+        font-size: 28px;
+    }
 
    .beauty-page-hero{
     padding: 34px 0 28px;
@@ -3336,5 +4491,3 @@ a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.cont
         width: calc(33.333% - 22px);
     }
 }
-
-

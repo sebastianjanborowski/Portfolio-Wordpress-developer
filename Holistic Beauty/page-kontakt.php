@@ -12,16 +12,14 @@ get_header();
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <!-- Nagłówek jak w Twoim stylu (opcjonalnie) -->
-    <header class="beauty-page-hero">
+    <div class="beauty-page-hero">
       <div class="container">
         <div class="beauty-page-hero__inner">
-          <h1 class="beauty-page-title"><?php the_title(); ?>
-            <br/>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/produkcja/podkreslnik_title_cut.png" alt="Podkreślnik tytułu podstrony">
-          </h1>
+            <img class="holistic-header-ornament" src="<?php echo get_template_directory_uri(); ?>/assets/img/produkcja/podkreslnik_title_cut.png" alt="Podkreślnik tytułu podstrony">
+          <h1 class="beauty-page-title"><?php the_title(); ?></h1>
         </div>
       </div>
-    </header>
+</div>
 
     <section class="beauty-contact-section py-5">
       <div class="container">
@@ -43,7 +41,7 @@ get_header();
             <!-- PRAWA: Dane kontaktowe -->
             <div class="col-12 col-lg-5">
               <div class="holistic-kontakt-main-img">
-                    <img src="<?php echo get_template_directory_uri()?>/assets/img/produkcja/lidia_syska_kontakt.jpg">
+                    <img src="<?php echo get_template_directory_uri()?>/assets/img/produkcja/holistic Beauty zabiegi na twarz, medycyna estetyczna lidia syska-Kontakt-Kontakt-cut.png">
                     <div class="p-3 rounded-4 bg-white bg-opacity-75 shadow-sm">
                         <h2 class="fw-semibold" style="color:#c9a45c; font-family: 'Playfair Display', serif;">
                             Świadoma pielęgnacja,

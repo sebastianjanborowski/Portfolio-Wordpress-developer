@@ -12,52 +12,53 @@ if (is_admin()) {
  * Assets (JEDEN Bootstrap: CDN)
  */
 add_action('wp_enqueue_scripts', function () {
-  if (is_admin()) return;
+    if (is_admin()) return;
 
-  $theme_uri = get_template_directory_uri();
+    $theme_uri  = get_template_directory_uri();
+    $theme_path = get_template_directory();
 
-  // === Bootstrap 5.3.3 (CDN) ===
-  wp_enqueue_style(
-    'bootstrap',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-    [],
-    '5.3.3'
-  );
+    function bydlo_asset_version($file_path, $fallback = '1.0.0') {
+        return file_exists($file_path) ? filemtime($file_path) : $fallback;
+    }
 
-  wp_enqueue_script(
-    'bootstrap-bundle',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
-    [],
-    '5.3.3',
-    true
-  );
-  // NIE dawaj defer na bootstrap-bundle (unikasz wyścigów inicjalizacji)
+    wp_enqueue_style(
+        'bootstrap',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+        [],
+        '5.3.3'
+    );
 
-  // === Bootstrap Icons (lokalnie) ===
-  wp_enqueue_style(
-    'bootstrap_icons_local',
-    $theme_uri . '/assets/css/bootstrap-icons-local.css',
-    [],
-    '1.0.0'
-  );
+    wp_enqueue_script(
+        'bootstrap-bundle',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+        [],
+        '5.3.3',
+        true
+    );
 
-  // === Theme CSS ===
-  wp_enqueue_style(
-    'bydlo-style',
-    $theme_uri . '/assets/css/style.css',
-    ['bootstrap'],
-    '0.0.1'
-  );
+    wp_enqueue_style(
+        'bootstrap_icons_local',
+        $theme_uri . '/assets/css/bootstrap-icons-local.css',
+        [],
+        bydlo_asset_version($theme_path . '/assets/css/bootstrap-icons-local.css')
+    );
 
-  // === Theme JS (po Bootstrap) ===
-  wp_enqueue_script(
-    'bydlo-script',
-    $theme_uri . '/assets/js/script.js',
-    ['bootstrap-bundle'],
-    '0.0.1',
-    true
-  );
-  wp_script_add_data('bydlo-script', 'defer', true);
+    wp_enqueue_style(
+        'bydlo-style',
+        $theme_uri . '/assets/css/style.css',
+        ['bootstrap'],
+        bydlo_asset_version($theme_path . '/assets/css/style.css')
+    );
+
+    wp_enqueue_script(
+        'bydlo-script',
+        $theme_uri . '/assets/js/script.js',
+        ['bootstrap-bundle'],
+        bydlo_asset_version($theme_path . '/assets/js/script.js'),
+        true
+    );
+
+    wp_script_add_data('bydlo-script', 'defer', true);
 
 }, 20);
 
@@ -275,3 +276,15 @@ function holistic_custom_firld_valisate($errors,$username,$email){
 }
 
 add_filter('woocommerce_registration_errors','holistic_custom_firld_valisate',10,3);
+
+function holistic_add_button_register_login(){
+  if(is_user_logged_in()){
+    return;
+  }
+    echo '<div class="holistic-social-login">';
+    echo do_shortcode('[nextend_social_login provider="google"]');
+    echo '</div>';
+}
+
+add_action('woocommerce_login_form_end','holistic_add_button_register_login');
+add_action('woocommerce_register_form_end','holistic_add_button_register_login');
