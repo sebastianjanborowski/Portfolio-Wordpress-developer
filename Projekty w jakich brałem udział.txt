@@ -1,0 +1,89 @@
+Wykonane projekty.
+
+• dev.bydlo.com.pl
+  Projekt zaawansowanego motywu blogowego
+  dla firmy PZHiBPM, realizowany podczas pracy w firmie Cemit.
+
+• exitus.com.pl
+  Projekt nowoczesnego serwisu cmentarnego
+  dla firmy Exitus, realizowany podczas pracy w firmie Cemit.
+
+• ekotrade.com.pl
+  Projekt strony firmowej dla firmy ochroniarskiej Ekotrade,
+  realizowany podczas pracy w firmie Cemit.
+
+• handmadetree.pl
+  Serwis informacyjno-sprzedażowy
+  wykonany dla firmy Handmade Tree.
+
+• Moda i Finezja
+  Autorski projekt blogowy
+  wykonany do portfolio prezentacyjnego.
+
+• Drukujemy Marzenia
+  Autorski projekt sklepu internetowego
+  wykonany do portfolio prezentacyjnego.
+
+• dobry-sluch.pl
+  Jeden z moich pierwszych projektów,
+  oparty na autorskim systemie CMS IDMS.
+
+• stoczekklasztorny.pl
+  Projekt internetowy wykonany
+  w oparciu o system CMS IDMS.
+
+• azurowy-styl.pl
+  Projekt strony internetowej
+  oparty na CMS IDMS.
+
+• integraal.org.pl
+  Projekt serwisu internetowego
+  wykonany na CMS IDMS.
+
+
+Aktualnie realizowany projekt.
+
+• holistic-beauty.eu
+  Sklep internetowy rozwijany obecnie
+  dla marki Holistic Beauty.
+
+
+Projekty, przy których brałem udział.
+
+• komputerywpiasecznie.pl
+  Rozwój sklepu internetowego,
+  modernizacja funkcjonalności
+  oraz integracja API hurtowni Action
+  z wykorzystaniem automatyzacji n8n.
+
+• komuwina.pl
+  Modernizacja menu oraz optymalizacja SEO
+  i wydajności serwisu
+  w Google PageSpeed Insights.
+
+• domekelfow.pl
+  Rozbudowa menu, usprawnienia SEO
+  oraz modernizacja formularzy kontaktowych.
+
+• cemit.pl
+  Całkowita przebudowa funkcjonalności serwisu
+  przy zachowaniu dotychczasowego wyglądu strony
+  dzięki technikom optymalizacyjnym.
+
+• wojcik.paris
+  Naprawa i przywracanie serwisu internetowego
+  z wykorzystaniem kopii baz danych
+  oraz odzyskiwania metadanych.
+
+• bydlo.com.pl
+  Rozbudowa oraz modernizacja
+  newsletterów i sekcji blogowych.
+
+• stomatologiapanczyk.pl
+  Implementacja automatyzacji publikacji treści
+  na Facebooku oraz WordPressie.
+
+• otdent.pl
+  Wdrożenie automatyzacji n8n
+  do publikacji wpisów blogowych
+  i treści Facebook wspierających SEO.
