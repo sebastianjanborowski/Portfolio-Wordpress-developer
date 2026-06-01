@@ -1,0 +1,683 @@
+/* =========================================================
+   1. ROOT / ZMIENNE GLOBALNE
+========================================================= */
+:root{
+    --app-bg: #eef3f8;
+    --app-surface: #ffffff;
+    --app-primary: #1f5aa8;
+    --app-primary-hover: #17498a;
+    --app-text: #1f2a37;
+    --app-muted: #6b7280;
+    --app-border: #dbe3ee;
+    --app-input-bg: #f4f7fb;
+    --app-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --app-radius: 16px;
+}
+
+
+/* =========================================================
+   2. USTAWIENIA GLOBALNE
+========================================================= */
+body{
+    background: linear-gradient(180deg, #f4f7fb 0%, var(--app-bg) 100%);
+    color: var(--app-text);
+}
+
+
+/* =========================================================
+   3. SEKCJA LOGOWANIA / FORMULARZE
+   Nie ruszać logiki klas formularzy
+========================================================= */
+.login-page{
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 12px;
+}
+
+.login-wrapper{
+    width: 100%;
+    max-width: 460px;
+}
+
+.login-top-icon{
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(31, 90, 168, 0.08);
+    color: var(--app-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 28px;
+}
+
+.login-heading{
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-heading h2{
+    margin: 0 0 8px;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--app-primary);
+}
+
+.login-heading p{
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 0.95rem;
+}
+
+.login-card{
+    background: var(--app-surface);
+    border: 1px solid rgba(219, 227, 238, 0.9);
+    border-radius: var(--app-radius);
+    box-shadow: var(--app-shadow);
+    padding: 28px;
+}
+
+.form-group{
+    margin-bottom: 18px;
+}
+
+.form-label-custom{
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--app-text);
+}
+
+.form-control{
+    min-height: 48px;
+    border-radius: 10px;
+    border: 1px solid var(--app-border);
+    background: var(--app-input-bg);
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    border-color: rgba(31, 90, 168, 0.5);
+    background: #fff;
+}
+
+.btn-login{
+    width: 100%;
+    min-height: 48px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--app-primary);
+    color: #fff;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-login:hover{
+    background: var(--app-primary-hover);
+    color: #fff;
+}
+
+.error{
+    min-height: 18px;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: #dc3545;
+}
+
+#resultBox{
+    margin-top: 16px;
+    min-height: 24px;
+    font-size: 0.92rem;
+}
+
+.login-footer-info{
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+    text-align: center;
+    color: var(--app-muted);
+    font-size: 0.82rem;
+}
+
+.login-footer-info span{
+    display: inline-block;
+    margin: 4px 10px;
+}
+
+.czerwone_obramowanie{
+    border: solid 1px red;
+}
+
+
+/* =========================================================
+   4. SEKCJA PANELU / DASHBOARD
+   Osobna sekcja, bez wpływu na formularze
+========================================================= */
+.dashboard-page{
+    /* min-height: calc(100vh - 120px); */
+    padding: 48px 12px;
+}
+
+.dashboard-wrapper{
+    width: 100%;
+    max-width: 1400px; /* było za wąsko, teraz jest szerzej */
+    margin: 0 auto;
+}
+
+.dashboard-header{
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1{
+    margin: 0 0 8px;
+    font-size: 2.1rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--app-primary);
+}
+
+.dashboard-header p{
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 0.96rem;
+}
+
+.dashboard-card{
+    background: var(--app-surface);
+    border: 1px solid rgba(219, 227, 238, 0.9);
+    border-radius: var(--app-radius);
+    box-shadow: var(--app-shadow);
+    padding: 32px 32px 50px 32px;
+}
+
+.dashboard-grid{
+    row-gap: 20px;
+}
+
+.dashboard-tile{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    height: 100%;
+    padding: 22px;
+    border: 1px solid var(--app-border);
+    border-radius: 14px;
+    background: #fff;
+    text-decoration: none;
+    color: var(--app-text);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.dashboard-tile:hover{
+    transform: translateY(-2px);
+    border-color: rgba(31, 90, 168, 0.28);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    color: var(--app-text);
+}
+
+.dashboard-tile-icon{
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 14px;
+    background: rgba(31, 90, 168, 0.08);
+    color: var(--app-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.dashboard-tile-content h3{
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--app-primary);
+}
+
+.dashboard-tile-content p{
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.dashboard-footer-info{
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+    text-align: center;
+    color: var(--app-muted);
+    font-size: 0.82rem;
+}
+
+.dashboard-footer-info span{
+    display: inline-block;
+    margin: 4px 10px;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   TABELA DIET - WERSJA SZERSZA / BOOTSTRAP
+========================================================= */
+.diet-page-wide{
+    width: 100%;
+    /* max-width: 1800px; */
+}
+
+.text-primary-custom{
+    color: var(--app-primary) !important;
+}
+
+.diet-table-card{
+    padding: 28px;
+}
+
+.diet-back-btn-bootstrap{
+    min-height: 46px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 16px;
+}
+
+.diet-table-bootstrap-wrap{
+    border: 1px solid var(--app-border);
+    border-radius: 14px;
+    overflow: auto;
+    background: #fff;
+}
+
+.diet-table-bootstrap{
+    /* min-width: 1550px; */
+    margin-bottom: 0;
+}
+
+.diet-table-bootstrap thead th{
+    background: #f7f9fc;
+    color: var(--app-primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--app-border);
+    padding: 14px 16px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.diet-table-bootstrap tbody td{
+    padding: 14px 16px;
+    font-size: 0.93rem;
+    color: var(--app-text);
+    border-color: #eef2f7;
+    vertical-align: top;
+}
+
+.diet-table-bootstrap tbody tr:hover{
+    background: #f9fbfe;
+}
+
+.diet-col-wide{
+    min-width: 260px;
+    max-width: 360px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.diet-code-badge{
+    background: rgba(31, 90, 168, 0.08);
+    color: var(--app-primary);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 8px 12px;
+}
+
+.diet-status-badge{
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.diet-status-special{
+    background: rgba(245, 158, 11, 0.14);
+    color: #b45309;
+}
+
+.diet-status-normal{
+    background: rgba(107, 114, 128, 0.12);
+    color: #4b5563;
+}
+
+.diet-status-active{
+    background: rgba(34, 197, 94, 0.14);
+    color: #15803d;
+}
+
+.diet-status-inactive{
+    background: rgba(220, 53, 69, 0.12);
+    color: #b42318;
+}
+
+.diet-empty-state{
+    color: var(--app-muted);
+}
+
+.catering-slownik-diet{
+    width: 250px;
+    margin: 20px 0px 20px 0px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#cateringNoAkceptDiet{
+    background-color: red;
+    float: right;
+    color: white;
+}
+#cateringAkceptDiet{
+    background-color: rgb(59, 133, 78);
+    float: left;
+}
+
+.cateringAkceptDiet{
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+#catering_findDiet{
+    padding: 10px;
+    margin: 60px 0px 0px 0px;
+}
+
+.reports-desktop-table {
+    display: block;
+}
+
+.reports-mobile-accordion {
+    display: none;
+}
+
+.report-email-badge {
+    white-space: normal;
+    text-align: left;
+    line-height: 1.4;
+    max-width: 240px;
+}
+
+.reports-tools {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid rgba(13, 110, 253, 0.08);
+    border-radius: 18px;
+    padding: 1rem;
+}
+
+.reports-tool-icon {
+    background: #f3f7ff;
+    border-color: #dee7f7;
+    color: #0d6efd;
+}
+
+.table-sort-btn {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-weight: 700;
+    color: #212529;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+    transition: .2s ease;
+}
+
+.table-sort-btn:hover {
+    color: #0d6efd;
+}
+
+.table-sort-btn.active {
+    color: #0d6efd;
+}
+
+.table-sort-btn i {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.reports-accordion-item {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.reports-accordion-button {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: none !important;
+    padding: 1rem 1.2rem;
+}
+
+.reports-accordion-button:not(.collapsed) {
+    background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+    color: inherit;
+}
+
+.reports-accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.reports-accordion-body {
+    background: #fcfdff;
+    padding: 1.25rem;
+}
+
+.report-info-box {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(13, 110, 253, 0.08);
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+}
+
+.report-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6c757d;
+    margin-bottom: 0.35rem;
+}
+
+.report-value {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.45;
+    word-break: break-word;
+}
+
+/* geenrowanie tabeli w js */
+    .raport-message{
+    margin-top: 14px;
+    margin-bottom: 0;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.raport-message-error{
+    background: rgba(220, 53, 69, 0.10);
+    color: #842029;
+    border: 1px solid rgba(220, 53, 69, 0.20);
+}
+
+.raport-message-info{
+    background: rgba(13, 110, 253, 0.08);
+    color: #084298;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+}
+
+.d-none{
+    display: none !important;
+}
+/* koneic */
+
+
+@media (max-width: 767.98px) {
+    .reports-desktop-table {
+        display: none;
+    }
+
+    .reports-mobile-accordion {
+        display: block;
+    }
+
+    .reports-accordion-button {
+        padding: 0.9rem 1rem;
+    }
+
+    .reports-accordion-body {
+        padding: 1rem;
+    }
+
+    .report-info-box {
+        padding: 0.85rem 0.9rem;
+    }
+
+    .report-value {
+        font-size: 0.94rem;
+    }
+}
+
+
+
+@media (max-width: 1399.98px){
+    .diet-page-wide{
+        max-width: 100%;
+    }
+
+    .diet-table-bootstrap{
+        /* min-width: 1450px; */
+    }
+}
+
+@media (max-width: 991.98px){
+    .catering-slownik-diet{
+        width: 200px;
+    }
+    .diet-table-card{
+        padding: 22px;
+    }
+
+    .diet-col-wide{
+        min-width: 220px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 575.98px){
+    .diet-table-card{
+        padding: 16px;
+    }
+
+    .diet-back-btn-bootstrap{
+        width: 100%;
+    }
+}
+
+
+.diet-form-card{
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.diet-btn-save{
+    min-height: 46px;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   5. WARIANT KAFELKA OSTRZEGAWCZEGO / WYLOGOWANIE
+========================================================= */
+.dashboard-tile-danger .dashboard-tile-icon{
+    background: rgba(220, 53, 69, 0.08);
+    color: #dc3545;
+}
+
+.dashboard-tile-danger .dashboard-tile-content h3{
+    color: #dc3545;
+}
+
+.catering-margin{
+    /* margin: -250px auto; */
+    /* padding-bottom: 50px; */
+}
+
+
+
+/* =========================================================
+   6. RESPONSYWNOŚĆ
+========================================================= */
+@media (max-width: 991.98px){
+    .dashboard-wrapper{
+        max-width: 1140px;
+    }
+
+    .dashboard-card{
+        padding: 24px 24px 50px 24px;
+    }
+}
+
+@media (max-width: 575.98px){
+    .login-card{
+        padding: 22px 16px;
+    }
+
+    .login-heading h2{
+        font-size: 1.65rem;
+    }
+
+    .dashboard-page{
+        padding: 32px 12px;
+    }
+
+    .dashboard-card{
+        padding: 20px 16px;
+    }
+
+    .dashboard-header h1{
+        font-size: 1.7rem;
+    }
+
+    .dashboard-tile{
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .dashboard-tile-icon{
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 1.15rem;
+    }
+}
