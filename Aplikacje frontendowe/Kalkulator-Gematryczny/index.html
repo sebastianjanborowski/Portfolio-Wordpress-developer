@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Profesjonalny kalkulator gematryczny wykonany w czystym HTML, CSS i JavaScript. Projekt portfolio do CV.">
+  <title>Kalkulator Gematryczny | HTML CSS JS</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#calculator">Przejdź do kalkulatora</a>
+
+  <header class="site-header" aria-label="Główny nagłówek strony">
+    <nav class="navbar container" aria-label="Nawigacja główna">
+      <a class="brand" href="#top" aria-label="Kalkulator Gematryczny - strona główna">
+        <span class="brand__mark" aria-hidden="true">KG</span>
+        <span class="brand__text">Kalkulator Gematryczny</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-controls="mainMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="mainMenu">
+        <a href="#calculator">Kalkulator</a>
+        <a href="#methods">Metody</a>
+        <a href="#history">Historia</a>
+        <a href="#about">O projekcie</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Zmień motyw strony">
+          <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+          Motyw
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-spacing">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Projekt portfolio · HTML CSS JavaScript</span>
+          <h1>Analizuj tekst w czterech systemach gematrycznych.</h1>
+          <p>
+            Responsywna aplikacja frontendowa do obliczania wartości tekstu według systemów:
+            Gematric, Nous, Psyche i Soma. Projekt pokazuje pracę z czystym JavaScriptem,
+            walidacją danych, stanem aplikacji, localStorage i profesjonalnym interfejsem.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#calculator">Uruchom kalkulator</a>
+            <a class="btn btn--ghost" href="#about">Zobacz opis projektu</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Podsumowanie funkcji aplikacji">
+          <div class="hero-card__top">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Aplikacja gotowa do uruchomienia w przeglądarce</span>
+          </div>
+          <ul class="feature-list">
+            <li>4 systemy obliczeń</li>
+            <li>Redukcja cyfr i liczby specjalne</li>
+            <li>Historia analiz w localStorage</li>
+            <li>Eksport i kopiowanie wyniku</li>
+            <li>Tryb jasny oraz ciemny</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-spacing section-muted" id="calculator">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Kalkulator</span>
+          <h2>Wpisz tekst do analizy</h2>
+          <p>
+            Możesz wpisać imię, nazwę, krótkie zdanie albo dowolny tekst. Aplikacja uwzględnia litery alfabetu łacińskiego,
+            polskie znaki są automatycznie normalizowane do podstawowych odpowiedników.
+          </p>
+        </div>
+
+        <div class="calculator-layout">
+          <section class="panel calculator-panel" aria-label="Formularz kalkulatora">
+            <form id="gematriaForm" novalidate>
+              <div class="field-group">
+                <label for="textInput">Tekst do obliczenia</label>
+                <textarea
+                  id="textInput"
+                  name="text"
+                  rows="6"
+                  maxlength="500"
+                  placeholder="Przykład: Sebastian Jan Borowski"
+                  aria-describedby="textHelp textCounter formMessage"
+                  required
+                ></textarea>
+                <div class="field-meta">
+                  <small id="textHelp">Do obliczeń wykorzystywane są tylko litery A–Z po normalizacji znaków.</small>
+                  <small><span id="charCounter">0</span>/500</small>
+                </div>
+              </div>
+
+              <fieldset class="field-group">
+                <legend>Zakres wyniku</legend>
+                <div class="checkbox-grid" role="group" aria-label="Wybór wyników do pokazania">
+                  <label class="check-card">
+                    <input type="checkbox" name="resultMode" value="base" checked>
+                    <span>Wartości główne</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="resultMode" value="reductions" checked>
+                    <span>Redukcje cyfr</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="resultMode" value="letters" checked>
+                    <span>Tabela liter</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button class="btn btn--primary" type="submit">Oblicz wynik</button>
+                <button class="btn btn--ghost" id="sampleButton" type="button">Wstaw przykład</button>
+                <button class="btn btn--danger-outline" id="clearButton" type="button">Wyczyść</button>
+              </div>
+
+              <div class="message" id="formMessage" aria-live="polite"></div>
+            </form>
+          </section>
+
+          <aside class="panel info-panel" aria-label="Informacje o metodach">
+            <h3>Jak liczone są wartości?</h3>
+            <p>
+              Każda litera otrzymuje wartość w czterech systemach. Najpierw liczone są sumy surowe, następnie wykonywana
+              jest redukcja cyfr. Jeżeli w redukcji pojawi się liczba specjalna, np. 11, obliczenie zatrzymuje się na tej liczbie.
+            </p>
+            <div class="mini-grid">
+              <div><strong>Gematric</strong><span>wartość litery 1–26</span></div>
+              <div><strong>Nous</strong><span>wartości 100–125</span></div>
+              <div><strong>Psyche</strong><span>wartość litery 1–26</span></div>
+              <div><strong>Soma</strong><span>cykl 1–9</span></div>
+            </div>
+          </aside>
+        </div>
+
+        <section class="results" id="results" aria-label="Wyniki obliczeń" hidden>
+          <div class="results__header">
+            <div>
+              <span class="eyebrow">Wynik analizy</span>
+              <h2 id="resultTitle">Wyniki</h2>
+            </div>
+            <div class="results__actions">
+              <button class="btn btn--ghost btn--small" id="copyResultButton" type="button">Kopiuj</button>
+              <button class="btn btn--ghost btn--small" id="downloadResultButton" type="button">Pobierz JSON</button>
+              <button class="btn btn--ghost btn--small" id="printButton" type="button">Drukuj</button>
+            </div>
+          </div>
+
+          <div class="result-grid" id="summaryCards"></div>
+
+          <div class="cycle-panel" id="cyclePanel" aria-live="polite"></div>
+
+          <div class="panel reductions-panel" id="reductionsPanel">
+            <h3>Redukcje i klasyfikacja liczb</h3>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>System</th>
+                    <th>Suma surowa</th>
+                    <th>Przebieg redukcji</th>
+                    <th>Wynik końcowy</th>
+                    <th>Klasyfikacja</th>
+                  </tr>
+                </thead>
+                <tbody id="reductionsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel letters-panel" id="lettersPanel">
+            <h3>Analiza liter</h3>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nr</th>
+                    <th>Litera</th>
+                    <th>Gematric</th>
+                    <th>Nous</th>
+                    <th>Psyche</th>
+                    <th>Soma</th>
+                  </tr>
+                </thead>
+                <tbody id="lettersTableBody"></tbody>
+                <tfoot id="lettersTableFoot"></tfoot>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-spacing" id="methods">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Metody</span>
+          <h2>Systemy dostępne w aplikacji</h2>
+          <p>Projekt zachowuje logikę pierwotnego kalkulatora, ale porządkuje ją w czytelny i łatwy do rozwijania kod.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="method-card">
+            <h3>Gematric</h3>
+            <p>Wartość litery według pozycji w alfabecie od 1 do 26. Wynik końcowy powstaje po redukcji z zatrzymaniem na liczbach specjalnych.</p>
+          </article>
+          <article class="method-card">
+            <h3>Nous</h3>
+            <p>Każda litera ma wartość od 100 wzwyż. Metoda premiuje długość tekstu i pozycję liter.</p>
+          </article>
+          <article class="method-card">
+            <h3>Psyche</h3>
+            <p>Klasyczne przypisanie pozycji alfabetu od 1 do 26, przydatne jako prosty punkt odniesienia.</p>
+          </article>
+          <article class="method-card">
+            <h3>Soma</h3>
+            <p>Cykl wartości od 1 do 9. Kierunek cyklu jest określany przez wartość Soma pierwszej i ostatniej litery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-spacing section-muted" id="history">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div>
+            <span class="eyebrow">Historia</span>
+            <h2>Ostatnie analizy</h2>
+            <p>Historia jest zapisywana lokalnie w przeglądarce przez localStorage. Nie wymaga backendu ani bazy danych.</p>
+          </div>
+          <button class="btn btn--danger-outline" id="clearHistoryButton" type="button">Wyczyść historię</button>
+        </div>
+
+        <div class="history-list" id="historyList" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-spacing" id="about">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">O projekcie</span>
+          <h2>Projekt gotowy do CV i GitHuba</h2>
+          <p>
+            Aplikacja została przygotowana jako czysty projekt frontendowy. Nie wymaga instalowania pakietów,
+            kompilatorów ani serwera. Wystarczy otworzyć plik <code>index.html</code> w przeglądarce.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Co pokazuje projekt?</h3>
+          <ul class="check-list">
+            <li>semantyczny HTML i dostępność,</li>
+            <li>responsywny layout CSS bez frameworków,</li>
+            <li>modułową logikę JavaScript,</li>
+            <li>walidację formularza i komunikaty bez alertów,</li>
+            <li>localStorage, eksport JSON i kopiowanie wyników.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="currentYear"></span> Kalkulator Gematryczny. Projekt frontendowy do portfolio.</p>
+      <a href="#top">Wróć na górę</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

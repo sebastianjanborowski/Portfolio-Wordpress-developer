@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profesjonalna, responsywna gra Wisielec napisana w czystym HTML, CSS i JavaScript. Projekt portfolio z kategoriami, poziomami trudności, statystykami, timerem, podpowiedziami i localStorage.">
+    <meta name="author" content="Projekt portfolio">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#6d28d9">
+    <title>Wisielec Arena | Projekt JavaScript do CV</title>
+    <link rel="icon" href="img/dota.png" type="image/png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#game">Przejdź do gry</a>
+    <div class="app-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="Wisielec Arena - strona główna">
+                <span class="brand-logo">W</span>
+                <span class="brand-name">Wisielec Arena</span>
+            </a>
+
+            <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mainNavigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav" id="mainNavigation" aria-label="Główna nawigacja">
+                <a href="#game">Gra</a>
+                <a href="#features">Funkcje</a>
+                <a href="#rules">Zasady</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-button" id="themeToggle" type="button" aria-label="Zmień motyw aplikacji">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a class="btn btn-primary btn-small" href="#game">Zagraj</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero-section section-space">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="section-kicker">Czysty HTML + CSS + JavaScript</span>
+                    <h1>Profesjonalna gra Wisielec do portfolio.</h1>
+                    <p>
+                        Responsywna aplikacja przeglądarkowa z kategoriami haseł, poziomami trudności,
+                        systemem punktacji, podpowiedziami, timerem, dźwiękami i zapisem statystyk w localStorage.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#game">Rozpocznij grę</a>
+                        <button class="btn btn-secondary" id="openInfoModal" type="button">Zobacz opis projektu</button>
+                    </div>
+
+                    <div class="hero-metrics" aria-label="Najważniejsze elementy projektu">
+                        <div>
+                            <strong>100%</strong>
+                            <span>bez frameworka</span>
+                        </div>
+                        <div>
+                            <strong>RWD</strong>
+                            <span>mobile first</span>
+                        </div>
+                        <div>
+                            <strong>LS</strong>
+                            <span>localStorage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="hero-card" aria-label="Podsumowanie projektu">
+                    <div class="hero-card-top">
+                        <img src="img/dota.png" alt="Ikona projektu" width="64" height="64">
+                        <div>
+                            <span>Projekt CV</span>
+                            <h2>Wisielec Arena</h2>
+                        </div>
+                    </div>
+                    <ul class="check-list">
+                        <li>modularny kod JavaScript,</li>
+                        <li>responsywny interfejs CSS Grid/Flexbox,</li>
+                        <li>obsługa klawiatury fizycznej i ekranowej,</li>
+                        <li>walidacja stanu gry i blokada podwójnych kliknięć,</li>
+                        <li>statystyki zapisane lokalnie w przeglądarce.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="game-section section-space" id="game">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-kicker">Arena gry</span>
+                    <h2>Zgadnij hasło zanim skończą się próby.</h2>
+                    <p>Wybierz kategorię i poziom trudności. Możesz grać myszką, dotykiem albo klawiaturą.</p>
+                </div>
+
+                <div class="game-layout">
+                    <aside class="settings-panel app-card">
+                        <div class="panel-header">
+                            <span class="panel-icon" aria-hidden="true">⚙️</span>
+                            <div>
+                                <h3>Ustawienia</h3>
+                                <p>Konfiguracja nowej rundy.</p>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="categorySelect">Kategoria haseł</label>
+                            <select id="categorySelect" class="field-control">
+                                <option value="all">Wszystkie kategorie</option>
+                                <option value="heroes">Bohaterowie</option>
+                                <option value="items">Przedmioty</option>
+                                <option value="skills">Umiejętności</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="difficultySelect">Poziom trudności</label>
+                            <select id="difficultySelect" class="field-control">
+                                <option value="easy">Łatwy — 9 prób, 3 podpowiedzi</option>
+                                <option value="normal" selected>Normalny — 7 prób, 2 podpowiedzi</option>
+                                <option value="hard">Trudny — 5 prób, 1 podpowiedź</option>
+                                <option value="expert">Ekspert — 4 próby, bez podpowiedzi</option>
+                            </select>
+                        </div>
+
+                        <div class="toggle-row">
+                            <div>
+                                <strong>Dźwięki</strong>
+                                <span>Efekty poprawnej i błędnej odpowiedzi.</span>
+                            </div>
+                            <button class="switch is-active" id="soundToggle" type="button" aria-label="Włącz lub wyłącz dźwięki" aria-pressed="true">
+                                <span></span>
+                            </button>
+                        </div>
+
+                        <div class="settings-actions">
+                            <button class="btn btn-primary w-100" id="newGameBtn" type="button">Nowa gra</button>
+                            <button class="btn btn-secondary w-100" id="hintBtn" type="button" disabled>Podpowiedź</button>
+                            <button class="btn btn-ghost w-100" id="revealBtn" type="button" disabled>Pokaż hasło</button>
+                            <button class="btn btn-danger w-100" id="resetStatsBtn" type="button">Wyczyść statystyki</button>
+                        </div>
+                    </aside>
+
+                    <section class="board-panel app-card" aria-labelledby="gameBoardTitle">
+                        <div class="board-topbar">
+                            <div>
+                                <span class="section-kicker">Rozgrywka</span>
+                                <h3 id="gameBoardTitle">Aktualna runda</h3>
+                            </div>
+                            <span class="status-pill" id="roundStatus">Gotowy</span>
+                        </div>
+
+                        <div class="stats-grid" aria-label="Statystyki aktualnej rundy">
+                            <div class="stat-card">
+                                <span>Próby</span>
+                                <strong id="attemptsStat">0/7</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>Czas</span>
+                                <strong id="timeStat">00:00</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>Wynik</span>
+                                <strong id="scoreStat">0</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>Rekord</span>
+                                <strong id="bestScoreStat">0</strong>
+                            </div>
+                        </div>
+
+                        <div class="message-box" id="gameMessage" role="status" aria-live="polite">
+                            Kliknij „Nowa gra”, aby rozpocząć rundę.
+                        </div>
+
+                        <div class="word-board" id="wordBoard" aria-label="Ukryte hasło">
+                            <span class="word-letter word-placeholder">?</span>
+                        </div>
+
+                        <div class="hint-box" id="hintBox" hidden></div>
+
+                        <div class="visual-and-summary">
+                            <div class="hangman-stage" aria-label="Grafika postępu wisielca">
+                                <img id="hangmanImage" src="img/s0.png" alt="Wisielec - etap 0">
+                            </div>
+
+                            <div class="round-summary">
+                                <h4>Informacje</h4>
+                                <dl>
+                                    <div>
+                                        <dt>Kategoria</dt>
+                                        <dd id="categoryStat">-</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Poziom</dt>
+                                        <dd id="difficultyStat">-</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Podpowiedzi</dt>
+                                        <dd id="hintsStat">0/0</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Błędne litery</dt>
+                                        <dd id="wrongLettersStat">brak</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="keyboard" id="keyboard" aria-label="Klawiatura ekranowa"></div>
+                    </section>
+                </div>
+
+                <section class="statistics-panel app-card" aria-labelledby="statisticsTitle">
+                    <div class="panel-header compact">
+                        <span class="panel-icon" aria-hidden="true">📊</span>
+                        <div>
+                            <h3 id="statisticsTitle">Statystyki zapisane w przeglądarce</h3>
+                            <p>Dane są zapisywane lokalnie przez localStorage.</p>
+                        </div>
+                    </div>
+
+                    <div class="statistics-grid">
+                        <div class="stat-card large">
+                            <span>Rozegrane gry</span>
+                            <strong id="gamesStat">0</strong>
+                        </div>
+                        <div class="stat-card large">
+                            <span>Wygrane</span>
+                            <strong id="winsStat">0</strong>
+                        </div>
+                        <div class="stat-card large">
+                            <span>Przegrane</span>
+                            <strong id="lossesStat">0</strong>
+                        </div>
+                        <div class="stat-card large">
+                            <span>Skuteczność</span>
+                            <strong id="winRateStat">0%</strong>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="features-section section-space" id="features">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-kicker">Funkcjonalności</span>
+                    <h2>Co pokazuje projekt?</h2>
+                    <p>Projekt jest przygotowany tak, aby dobrze wyglądał w portfolio junior frontend developera.</p>
+                </div>
+
+                <div class="features-grid">
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">📱</span>
+                        <h3>Responsywność</h3>
+                        <p>Układ działa na desktopie, tablecie i telefonie. Panel gry przebudowuje się bez psucia proporcji.</p>
+                    </article>
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">⌨️</span>
+                        <h3>Obsługa klawiatury</h3>
+                        <p>Gra reaguje na fizyczną klawiaturę oraz przyciski ekranowe. Użyte litery są blokowane.</p>
+                    </article>
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">💾</span>
+                        <h3>localStorage</h3>
+                        <p>Najlepszy wynik i statystyki są zapisywane w pamięci przeglądarki bez backendu.</p>
+                    </article>
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">🧠</span>
+                        <h3>Logika gry</h3>
+                        <p>Kod kontroluje stan rundy, wygraną, przegraną, punktację, podpowiedzi i timer.</p>
+                    </article>
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">♿</span>
+                        <h3>Dostępność</h3>
+                        <p>Dodano aria-live, aria-label, obsługę focusu, semantyczne sekcje i przyciski.</p>
+                    </article>
+                    <article class="feature-card app-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3>UI/UX</h3>
+                        <p>Aplikacja ma tryb jasny i ciemny, komunikaty bez alertów oraz czytelne stany przycisków.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="rules-section section-space" id="rules">
+            <div class="container rules-grid">
+                <div class="rules-card app-card">
+                    <span class="section-kicker">Zasady</span>
+                    <h2>Jak grać?</h2>
+                    <ol class="rules-list">
+                        <li>Wybierz kategorię i poziom trudności.</li>
+                        <li>Kliknij „Nowa gra”.</li>
+                        <li>Odgaduj litery ukrytego hasła.</li>
+                        <li>Za błędne litery tracisz próby.</li>
+                        <li>Wygrywasz, gdy odkryjesz całe hasło.</li>
+                    </ol>
+                </div>
+
+                <div class="rules-card app-card" id="tech">
+                    <span class="section-kicker">Technologie</span>
+                    <h2>Stack projektu</h2>
+                    <div class="tech-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript ES6+</span>
+                        <span>localStorage</span>
+                        <span>DOM API</span>
+                        <span>Audio API</span>
+                        <span>Responsive Web Design</span>
+                        <span>Accessibility</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-labelledby="infoModalTitle">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card" role="document">
+            <button class="modal-close" id="closeInfoModal" type="button" aria-label="Zamknij okno">×</button>
+            <span class="section-kicker">Opis projektu</span>
+            <h2 id="infoModalTitle">Wisielec Arena</h2>
+            <p>
+                To kompletna gra przeglądarkowa napisana w czystym JavaScript. Projekt pokazuje pracę ze stanem aplikacji,
+                manipulację DOM, obsługę zdarzeń, localStorage, responsywny interfejs i podstawy dostępności.
+            </p>
+            <p>
+                W CV można opisać go jako: „Responsywna gra Wisielec wykonana w HTML, CSS i JavaScript z kategoriami,
+                poziomami trudności, systemem punktacji, timerem, audio i zapisem statystyk w localStorage”.
+            </p>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-label="Powiadomienia"></div>
+
+    <audio id="soundCorrect" src="js/yes.wav" preload="auto"></audio>
+    <audio id="soundWrong" src="js/no.wav" preload="auto"></audio>
+    <audio id="soundWin" src="js/win.mp3" preload="auto"></audio>
+    <audio id="soundLose" src="js/lose.mp3" preload="auto"></audio>
+
+    <script src="js/hangman-game.js" defer></script>
+</body>
+</html>
