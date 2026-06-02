@@ -436,7 +436,8 @@ kateringtest5@gmail.com
 
 Podczas prezentacji aplikacji trzeba mieć dostęp do tej skrzynki albo zmienić adres e-mail użytkownika w bazie danych na własny adres testowy.
 
-Nie zalecam publikowania hasła do skrzynki e-mail w publicznym README na GitHubie. Jeżeli projekt pokazujesz rekruterowi, przekaż dane do skrzynki osobno albo zademonstruj logowanie podczas rozmowy.
+email: kateringtest5@gmail.com
+hasło: TestKatering123
 
 ---
 
